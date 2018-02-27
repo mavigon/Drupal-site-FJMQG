@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_featured_pages
+    - node.type.page
+    - paragraphs.paragraphs_type.home_featured_pages
+id: paragraph.home_featured_pages.field_featured_pages
+field_name: field_featured_pages
+entity_type: paragraph
+bundle: home_featured_pages
+label: 'Featured pages'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

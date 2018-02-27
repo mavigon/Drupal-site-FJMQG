@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_home_page_paragraphs
+    - node.type.home_page
+    - paragraphs.paragraphs_type.home_featured_animal
+    - paragraphs.paragraphs_type.home_featured_pages
+    - paragraphs.paragraphs_type.home_incoming_events
+    - paragraphs.paragraphs_type.home_slider_block
+  module:
+    - entity_reference_revisions
+id: node.home_page.field_home_page_paragraphs
+field_name: field_home_page_paragraphs
+entity_type: node
+bundle: home_page
+label: 'Home page paragraphs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      home_featured_animal: home_featured_animal
+      home_featured_pages: home_featured_pages
+      home_incoming_events: home_incoming_events
+      home_slider_block: home_slider_block
+    target_bundles_drag_drop:
+      home_featured_animal:
+        enabled: true
+        weight: 5
+      home_featured_pages:
+        enabled: true
+        weight: 6
+      home_incoming_events:
+        enabled: true
+        weight: 7
+      home_slider:
+        weight: 8
+        enabled: false
+      home_slider_block:
+        enabled: true
+        weight: 10
+field_type: entity_reference_revisions

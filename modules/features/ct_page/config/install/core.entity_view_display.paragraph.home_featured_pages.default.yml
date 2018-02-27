@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.home_featured_pages.field_featured_pages
+    - paragraphs.paragraphs_type.home_featured_pages
+id: paragraph.home_featured_pages.default
+targetEntityType: paragraph
+bundle: home_featured_pages
+mode: default
+content:
+  field_featured_pages:
+    weight: 0
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+hidden: {  }

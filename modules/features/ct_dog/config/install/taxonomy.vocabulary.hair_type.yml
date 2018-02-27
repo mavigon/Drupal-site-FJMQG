@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Hair type'
+vid: hair_type
+description: ''
+hierarchy: 0
+weight: 0

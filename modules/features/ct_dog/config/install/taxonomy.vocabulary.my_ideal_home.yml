@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'My ideal home'
+vid: my_ideal_home
+description: ''
+hierarchy: 0
+weight: 0

@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dog_my_ideal_home
+    - node.type.dog
+    - taxonomy.vocabulary.my_ideal_home
+id: node.dog.field_dog_my_ideal_home
+field_name: field_dog_my_ideal_home
+entity_type: node
+bundle: dog
+label: 'My ideal home'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      my_ideal_home: my_ideal_home
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_dog_age
+    - node.type.dog
+  module:
+    - datetime
+id: node.dog.field_dog_age
+field_name: field_dog_age
+entity_type: node
+bundle: dog
+label: Age
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
