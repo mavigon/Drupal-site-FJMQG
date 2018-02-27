@@ -9,8 +9,9 @@ dependencies:
   - image
   - menu_ui
   - node
+  - paragraphs
   - path
   - taxonomy
   - text
   - user
-version: 8.x-1.01
+version: 8.x-1.02
