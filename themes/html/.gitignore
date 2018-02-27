@@ -1,0 +1,10 @@
+.idea/
+css/main.css
+css/maps/
+design/
+js/maps/
+node_modules/
+/scripts.js
+/scripts.min.js
+/build/!*.html
+package-lock.json
