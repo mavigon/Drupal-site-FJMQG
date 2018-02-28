@@ -19,43 +19,42 @@ gulp.task('serve', ['pages', 'sass', 'scripts'], function() {
 	browserSync.init({
 		server: "./build"
 	});
-	gulp.watch("./sass/**/*.sass", ['sass']);
-	gulp.watch("./sass/media/**/*.sass", ['sass']);
-	gulp.watch("./js/*.js", ['scripts']);
-	gulp.watch("./build/js/scripts.js").on('change', browserSync.reload);
-	gulp.watch("./pages/*.html", ['pages']);
-	gulp.watch("./build/*.html").on('change', browserSync.reload);
+	gulp.watch('./sass/**/*.sass', ['sass']);
+	gulp.watch('./js/*.js', ['scripts']);
+	gulp.watch('./build/js/scripts.js').on('change', browserSync.reload);
+	gulp.watch('./pages/*.html', ['pages']);
+	gulp.watch('./build/*.html').on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
-	return gulp.src("./sass/**/*.sass")
+	return gulp.src('./sass/main.sass')
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(gcmq())
 		// .pipe(cssnano())
 		.pipe(sourcemaps.write('./maps'))
-		.pipe(gulp.dest("./build/css"))
+		.pipe(gulp.dest('./build/css'))
 		.pipe(browserSync.stream());
 });
 
 //browserify file
-gulp.task('bundle', function() {
-	return browserify("./js/custom.js")
+gulp.task('scripts', function() {
+	return browserify('./js/custom.js')
 		.bundle()
-		.pipe(source('bundle.js'))
-		.pipe(gulp.dest('./js/'));
+		.pipe(source('scripts.js'))
+		.pipe(gulp.dest('./build/js'));
 });
 
 // js tasks
-gulp.task('scripts', ['bundle'], function() {
-	return gulp.src(['./js/bundle.js', '!./js/custom.js', './js/*.js'], { base: 'js' })
-		.pipe(sourcemaps.init())
-		.pipe(concat('scripts.js'))
-		.pipe(uglify())
-		.pipe(gulp.dest("./build/js"))
-		.pipe(sourcemaps.write('./js/maps'));
-});
+// gulp.task('scripts', ['bundle'], function() {
+// 	return gulp.src(['!./js/custom.js', './js/bundle.js', './js/*.js'], { base: 'js' })
+// 		.pipe(sourcemaps.init())
+// 		.pipe(concat('scripts.js'))
+// 		// .pipe(uglify())
+// 		.pipe(gulp.dest("./build/js"))
+// 		.pipe(sourcemaps.write('./js/maps'));
+// });
 
 // html templates
 gulp.task('pages', function () {
