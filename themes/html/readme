@@ -1,0 +1,4 @@
+Install all dependences use
+    npm install
+Start browser server
+    gulp serve
