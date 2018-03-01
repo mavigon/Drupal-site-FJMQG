@@ -1,0 +1,17 @@
+name: Dog
+description: 'Provides Dog content type and related configuration. '
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - field
+  - file
+  - image
+  - menu_ui
+  - node
+  - paragraphs
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x-1.03
