@@ -7,11 +7,14 @@ var msDropdown = require('./jquery.dd');
 
 ;(function($) {
   //toogle class function
-  function toggleClassByClick (changeClass, className) {
-    changeClass.toggleClass(className)
+  function toggleClassByClick (blockToggleClass, className) {
+    blockToggleClass.toggleClass(className)
   };
 
   $(document).ready(function() {
+
+    //fix ios touch events
+    (function(l){var i,s={touchend:function(){}};for(i in s)l.addEventListener(i,s)})(document);
     
     //mobile navigation events
     var burger= $('#burger'),
@@ -23,6 +26,18 @@ var msDropdown = require('./jquery.dd');
 
     //dropdown country-list
     $("#countries").msDropdown();
+
+    //foto-slider
+    $('.foto-list').slick({
+      arrows: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+      cssEase: 'cubic-bezier(1,0,0,1)'
+    });
 
   });
 })($);

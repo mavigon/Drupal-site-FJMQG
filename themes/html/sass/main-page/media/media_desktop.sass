@@ -1,0 +1,82 @@
+@media all and (min-width: 1260px)
+  .btn-adopt
+    color: $color_black
+    background-color: $color_white
+    padding: 10px 35px
+    border-radius: 20px
+
+  .foto-list
+    .slick-prev,
+    .slick-next
+      width: 30px
+      height: 30px
+      top: 50%
+      border: none
+
+    .slick-prev
+      background: url('../img/icons/arr-prev.svg') center no-repeat
+      background-size: contain
+
+    .slick-next
+      background: url('../img/icons/arr-next.svg') center no-repeat
+      background-size: contain  
+
+    .btn-container
+      position: absolute
+      background-color: transparent
+      border-radius: 5px
+      padding: 0
+      bottom: 20%
+      left: 50%
+      transform: translateX(-50%)
+
+  //basic-info block
+  .basic-info-wr
+    padding: 40px 20px
+
+  .basic-info-lists
+    max-width: 1220px
+    display: flex
+    justify-content: space-between
+
+  //special animal block
+  .special-animal-inner
+    position: relative
+    display: flex
+
+    img
+      width: 65%
+      height: auto
+      max-height: 460px
+      min-height: 200px
+
+  .add-info
+    width: 35%
+    position: static
+    justify-content: center
+    padding: 20px
+    background-color: rgba($color_blue, 1)
+
+    h3
+      margin-bottom: 50px
+
+
+  //coming events block
+  .coming-events-inner
+    display: flex
+    img
+      display: block
+      width: 65%
+
+  .events-info
+    width: 35%
+    color: $color_black
+    background-color: $color_white
+
+  .btn-search
+    background-color: $color_blue
+    color: $color_white
+
+    &:hover
+      background-color: $color_light_blue
+      color: $color_white
