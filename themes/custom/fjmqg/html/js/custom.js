@@ -18,7 +18,7 @@ var msDropdown = require('./jquery.dd');
     
     //mobile navigation events
     var burger= $('#burger'),
-        header   = $('#header');
+        header   = $('#main-header');
 
     burger.click(function() {
       toggleClassByClick(header, 'mobile-menu-toggled');

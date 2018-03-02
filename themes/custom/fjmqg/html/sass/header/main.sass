@@ -2,6 +2,8 @@
   width: 100%
   position: relative
   background-color: $bg_color
+  .navigation
+    display: none
 
   &.mobile-menu-toggled
     .burger
@@ -136,3 +138,10 @@
     font-weight: 500
     display: block
     padding: 10px 0
+
+//remove defaul drupal styles
+  .block
+    .content
+      margin: 0
+    .title
+      display: none  
