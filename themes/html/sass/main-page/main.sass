@@ -1,0 +1,161 @@
+.foto-slider-wr
+  width: 100%
+  margin: 0 auto
+  max-width: initial
+
+//slider
+.foto-list
+  li
+    position: relative
+
+  img
+    width: 100%
+    height: auto
+    min-height: 185px
+    max-height: 570px
+
+  .slick-prev,
+  .slick-next
+    width: 0
+    height: 0
+    top: 45%
+    z-index: 10
+    &:before
+      content: ''
+    &:hover
+      opacity: 0.75
+
+  .slick-prev
+    left: 5px
+    border-right: 10px solid $color_white
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+
+    &:active
+      left: 3px
+
+  .slick-next
+    right: 5px
+    border-left: 10px solid $color_white
+    border-top: 10px solid transparent
+    border-bottom: 10px solid transparent
+
+    &:active
+      right: 3px
+
+//basic-info block
+.basic-info-wr
+  padding: 20px
+
+.basic-info-lists
+  max-width: 280px
+  margin: 0 auto
+
+  li
+    margin-bottom: 40px
+    &:last-child
+      margin-bottom: 0
+
+    &:hover
+      p
+        text-decoration: underline
+  a
+    display: block
+    text-decoration: none
+
+  h3
+    color: $color_blue
+    margin-bottom: 10px
+    font-size: 18px
+    font-weight: 500
+
+  img
+    width: 100%
+    height: auto
+    max-height: 200px
+    height: auto
+    margin-bottom: 10px
+    border-radius: 5px
+
+  p
+    color: $color_black
+    padding: 5px
+
+//special animal block
+.special-animal-inner
+  position: relative
+
+  img
+    width: 100%
+    height: auto
+    max-height: 460px
+    min-height: 200px
+
+.add-info
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  display: flex
+  flex-direction: column
+  padding: 20px
+  background-color: rgba($color_blue, 0.2)
+
+  h2,h3,p
+    text-align: center
+    color: $color_white
+    margin-bottom: 10px
+
+  h2
+    font-size: 20px
+    text-transform: uppercase
+    font-weight: 500
+
+  h3
+    font-size: 16px
+    text-transform: uppercase
+    font-weight: 500
+    margin-bottom: 10%
+
+  .btn-container
+    background-color: transparent
+
+.btn-search
+  background-color: $color_white
+  color: $color_blue
+
+  &:hover
+    background-color: $color_light_blue
+    color: $color_white
+
+//coming events block
+.coming-events-inner
+  img
+    display: none
+    width: 100%
+    height: auto
+    max-height: 460px
+    min-height: 200px
+
+.events-info
+  display: flex
+  flex-direction: column
+  justify-content: center
+  color: $color_white
+  text-align: center
+  padding: 20px
+  background-color: $color_blue
+
+  p
+    text-decoration: underline
+
+  h3, p
+    margin-bottom: 20px
+
+  .btn-container
+    background-color: transparent
+    padding: 40px 0 0 0 
+
+    p
+      text-decoration: none
