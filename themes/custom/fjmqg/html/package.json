@@ -32,7 +32,7 @@
   },
   "browserify": {
     "transform": [
-        "browserify-shim"
+      "browserify-shim"
     ]
   },
   "scripts": {
