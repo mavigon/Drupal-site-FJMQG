@@ -1,0 +1,60 @@
+table {
+    width:100%;
+    border-top:1px solid #e5eff8;
+    border-right:1px solid #e5eff8;
+    margin:1em auto;
+    border-collapse:collapse;
+}
+td {
+    color:#678197;
+    border-bottom:1px solid #e5eff8;
+    border-left:1px solid #e5eff8;
+    padding:.3em 1em;
+    text-align:center;
+    background:#f9fcfe
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+    border-bottom: 3px solid rgba(92,192,255,0.15);
+}
+
+.column1 {
+    background:#f9fcfe;
+}
+
+thead th {
+    background:#f4f9fe !important;
+    text-align:center;
+    font:bold 1.2em/2em "Century Gothic","Trebuchet MS",Arial,Helvetica,sans-serif;
+    color:#678197 !important;
+}
+
+a.btn {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+a.btn-view {
+    background-color: #008CBA;
+    display: block;
+    border: none;
+    color: white;
+    padding: 0.25em 1.063em;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 1em;
+}
+
+a.btn:hover, a.btn-view:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}

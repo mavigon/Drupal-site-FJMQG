@@ -1,0 +1,21 @@
+<header class="main-header" id="header">
+    {{ page.header }}
+</header>
+
+<main>
+    <a id="main-content" tabindex="-1"></a>
+
+    <div class="layout-content">
+       {# {{ page.breadcrumbs }}#}
+        {{ page.content }}
+    </div>
+</main>
+
+{#{% if (page.footer_first or page.footer_second) %}#}
+    <footer class="main-footer">
+        <div class="main-footer-wr">
+          {{ page.footer_first }}
+          {{ page.footer_second }}
+        </div>
+    </footer>
+{#{% endif %}#}

@@ -1,0 +1,8 @@
+fjmqg-styling:
+  css:
+    theme:
+      html/build/css/main.css: {}
+  js:
+    html/build/js/scripts.js: { minified: true }
+  dependencies:
+    - core/jquery
