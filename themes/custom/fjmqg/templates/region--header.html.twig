@@ -1,0 +1,40 @@
+{% if content %}
+    
+    <div class="main-header-wr">
+      <a href="#" class="main-header-logo"></a>
+      <div class="main-header-inner">
+        <div class="main-header-social">
+          <select name="countries" id="countries" class="select-lng">
+            <option value='ad' data-image="themes/custom/fjmqg/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-es" data-title="Spain"></option>
+            <option value='ae' data-image="themes/custom/fjmqg/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-us" data-title="England"></option>
+          </select>
+          <a href="#" class="social-link social-link--fb"></a>
+          <a href="#" class="social-link social-link--inst"></a>
+          <a href="#" class="btn btn-donate">donate</a>
+          <div id="burger" class="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <nav class="main-header-nav">
+          <ul class="main-header-nav-items">
+            <li>
+              <a href="#">Link 1</a>
+            </li>
+            <li>
+              <a href="#">Link 2</a>
+            </li>
+            <li>
+              <a href="#">Link 3</a>
+            </li>
+            <li>
+              <a href="#">Link 4</a>
+            </li>
+          </ul>
+        </nav>
+        {{ content }}
+      </div>
+    </div>
+{% endif %}
