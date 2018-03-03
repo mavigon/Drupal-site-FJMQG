@@ -1,0 +1,49 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_recent_events
+    - paragraphs.paragraphs_type.home_incoming_events
+  module:
+    - viewsreference
+id: paragraph.home_incoming_events.field_recent_events
+field_name: field_recent_events
+entity_type: paragraph
+bundle: home_incoming_events
+label: 'recent events'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:view'
+  handler_settings:
+    target_bundles: null
+    auto_create: 0
+  plugin_types:
+    default: default
+    page: 0
+    block: 0
+    feed: 0
+  preselect_views:
+    events_home_page: events_home_page
+    block_content: 0
+    comment: 0
+    comments_recent: 0
+    content: 0
+    content_recent: 0
+    files: 0
+    frontpage: 0
+    taxonomy_term: 0
+    user_admin_people: 0
+    watchdog: 0
+    who_s_new: 0
+    who_s_online: 0
+  enabled_settings:
+    argument: 0
+    limit: 0
+    offset: 0
+    pager: 0
+    title: 0
+field_type: viewsreference

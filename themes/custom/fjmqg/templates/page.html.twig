@@ -1,14 +1,12 @@
-<header class="main-header" id="header">
+<header class="main-header" id="main-header">
     {{ page.header }}
 </header>
 
 <main>
     <a id="main-content" tabindex="-1"></a>
 
-    <div class="layout-content">
-       {# {{ page.breadcrumbs }}#}
-        {{ page.content }}
-    </div>
+    {# {{ page.breadcrumbs }}#}
+    {{ page.content }}
 </main>
 
 {#{% if (page.footer_first or page.footer_second) %}#}

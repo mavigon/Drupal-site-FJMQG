@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.home_incoming_events.field_incoming_events_descriptio
+    - field.field.paragraph.home_incoming_events.field_incoming_events_image
+    - field.field.paragraph.home_incoming_events.field_incoming_events_link
+    - field.field.paragraph.home_incoming_events.field_incoming_events_link_label
+    - field.field.paragraph.home_incoming_events.field_incoming_events_title
+    - field.field.paragraph.home_incoming_events.field_recent_events
+    - paragraphs.paragraphs_type.home_incoming_events
+  module:
+    - image
+    - viewsreference
+id: paragraph.home_incoming_events.default
+targetEntityType: paragraph
+bundle: home_incoming_events
+mode: default
+content:
+  field_incoming_events_descriptio:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_incoming_events_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_incoming_events_link:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_incoming_events_link_label:
+    weight: 6
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_incoming_events_title:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_recent_events:
+    weight: 1
+    label: hidden
+    settings:
+      plugin_types:
+        - block
+    third_party_settings: {  }
+    type: viewsreference_formatter
+    region: content
+hidden: {  }
