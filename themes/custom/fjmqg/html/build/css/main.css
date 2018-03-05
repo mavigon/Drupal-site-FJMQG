@@ -2475,10 +2475,6 @@ img.fnone {
   background-color: #ffffff;
 }
 
-.main-header .navigation {
-  display: none;
-}
-
 .main-header.mobile-menu-toggled .burger span:first-child,
 .main-header.mobile-menu-toggled .burger span:last-child {
   height: 0;
@@ -2867,6 +2863,10 @@ img.fnone {
   text-decoration: underline;
 }
 
+.events-info p a {
+  color: #000000;
+}
+
 .events-info h3,
 .events-info p {
   margin-bottom: 20px;
@@ -3062,6 +3062,11 @@ img.fnone {
 
   .add-info h3 {
     margin-bottom: 50px;
+  }
+
+  .add-info a {
+    background-color: #ffffff;
+    color: #000000;
   }
 
   .coming-events-inner {
