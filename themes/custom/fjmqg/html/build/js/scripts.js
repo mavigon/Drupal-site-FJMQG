@@ -18,15 +18,15 @@ var msDropdown = require('./jquery.dd');
     (function(l){var i,s={touchend:function(){}};for(i in s)l.addEventListener(i,s)})(document);
     
     //mobile navigation events
-    var burger= $('#burger'),
-        header   = $('#main-header');
+    var burger  = $('#burger'),
+        header  = $('#main-header');
 
     burger.click(function() {
       toggleClassByClick(header, 'mobile-menu-toggled');
     })
 
     //dropdown country-list
-    $("#countries").msDropdown();
+    $('#countries').msDropdown();
 
     //foto-slider
     $('.foto-list').slick({
