@@ -9,11 +9,11 @@
     {{ page.content }}
 </main>
 
-{#{% if (page.footer_first or page.footer_second) %}#}
-    <footer class="main-footer">
-        <div class="main-footer-wr">
-          {{ page.footer_first }}
-          {{ page.footer_second }}
-        </div>
-    </footer>
-{#{% endif %}#}
+<footer class="main-footer">
+    <div class="main-footer-wr">
+      <nav class="main-footer-nav">
+        {{ page.footer_first }}
+        {{ page.footer_second }}
+      </nav>
+    </div>
+</footer>

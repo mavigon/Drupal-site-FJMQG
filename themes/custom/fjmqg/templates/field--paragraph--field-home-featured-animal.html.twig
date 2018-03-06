@@ -3,7 +3,7 @@
     <div class="add-info">
       <h3>some text</h3>
       <h2>{{ dog.title.value }}</h2>
-      {{dog.get('body').value|raw}}
+      <p>{{dog.get('body').summary}}</p>
       <div class="btn-container">
         <a class="btn btn-search" href="{{ path('entity.node.canonical', {'node': dog.id}) }}">Search</a>
       </div>
