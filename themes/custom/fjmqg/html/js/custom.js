@@ -1,5 +1,5 @@
 //import libraries
-var $ = require('jquery');
+var jQuery = require('jquery');
 var slick = require('slick-carousel');
 var jcf = require('jcf');
 var msDropdown = require('./jquery.dd');
@@ -39,5 +39,11 @@ var msDropdown = require('./jquery.dd');
       cssEase: 'cubic-bezier(1,0,0,1)'
     });
 
+    //add header padding-top in case opened drupal-menu (admin mode)
+
+    if($('#toolbar-administration').length) {
+      header.css('padding-top', '80px');
+    }
+
   });
-})($);
+})(jQuery);
