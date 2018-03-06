@@ -1,6 +1,6 @@
 (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 //import libraries
-var $ = require('jquery');
+var jQuery = require('jquery');
 var slick = require('slick-carousel');
 var jcf = require('jcf');
 var msDropdown = require('./jquery.dd');
@@ -40,8 +40,14 @@ var msDropdown = require('./jquery.dd');
       cssEase: 'cubic-bezier(1,0,0,1)'
     });
 
+    //add header padding-top in case opened drupal-menu (admin mode)
+
+    if($('#toolbar-administration').length) {
+      header.css('padding-top', '80px');
+    }
+
   });
-})($);
+})(jQuery);
 },{"./jquery.dd":2,"jcf":5,"jquery":14,"slick-carousel":15}],2:[function(require,module,exports){
 // MSDropDown - jquery.dd.js
 // author: Marghoob Suleman - http://www.marghoobsuleman.com/
