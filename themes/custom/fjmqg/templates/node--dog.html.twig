@@ -55,7 +55,7 @@
  *   displayed after the main title tag that appears in the template.
  * - view_mode: View mode; for example, "teaser" or "full".
  * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
- * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+    * - page: Flag for the full page state. Will be true if view_mode is 'full'.
  * - readmore: Flag for more state. Will be true if the teaser content of the
  *   node cannot hold the main body content.
  * - logged_in: Flag for authenticated user status. Will be true when the
@@ -66,18 +66,82 @@
  * @see template_preprocess_node()
  */
 #}
-{% set classes = [
-'node',
-'node--type-' ~ node.bundle|clean_class,
-node.isPromoted() ? 'node--promoted',
-node.isSticky() ? 'node--sticky',
-not node.isPublished() ? 'node--unpublished',
-view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-'clearfix',
-] %}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
 {{ attach_library('classy/node') }}
-<article{{ attributes.addClass(classes) }}>
-    <header>
+
+    <section class="pet-info">
+      <div class="pet-info-wr">
+        <h2>{{ label }}</h2>
+        <ul class="foto-list">
+            {{ content.field_dog_photo }}
+        </ul>
+        <div class="additional-info">
+          <h2>{{ label }}</h2>
+          <span class="label">gender: {{ content.field_dog_gender }}</span>
+          <span class="label">age: {{ content.field_dog_age }}</span>
+          <span class="label">breed: {{ content.field_dog_breed }}</span>
+          <span class="label">size: {{ content.field_dog_size }}</span>
+          <span class="label">hair: {{ content.field_dog_hair_type }}</span>
+        </div>
+      </div>
+    </section>
+        
+    <section class="tags-block">
+      <div class="tags-block-wr">
+        <div class="block who-i-am">
+          <h3>{{'How am I?'}}</h3>
+          <div class="block-inner">
+{#              {{ content.field_dog_how_am_i }}#}
+{#              {{ content.field_dog_how_am_i[0] }}#}
+                {% for key, value in content.field_dog_how_am_i['#items'] %}
+{#                       {% if key > 0 %}#}
+{{key}}
+{#                       //    tutu {{ content.field_dog_how_am_i[key] }}#}
+{#                        {% endif %}#}
+                {% endfor %}
+           {# <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>#}
+          </div>
+        </div>
+        <div class="block i-like">
+          <h3>head title</h3>
+          <div class="block-inner">
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+          </div>
+        </div>
+        <div class="block my-ideal-home">
+          <h3>head title</h3>
+          <div class="block-inner">
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+            <a href="#" class="label-tag">text gewg</a>
+          </div>
+        </div>
+        <div class="block my-story">
+          <h3>{{'My story'}}</h3>
+          <div class="block-inner">
+            {{ content.body }}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  {#  <header>
         {{ title_prefix }}
         {% if not page %}
             <h2{{ title_attributes.addClass('node__title') }}>
@@ -157,5 +221,5 @@ view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
                 </tr>
                 </tbody>
             </table>
-    </div>
-</article>
+    </div>#}
+{#</article>#}
