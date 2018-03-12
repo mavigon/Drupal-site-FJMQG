@@ -2939,7 +2939,7 @@ img.fnone {
   padding: 20px 10px;
 }
 
-.block {
+.block-item {
   padding: 20px 10px;
   border: 2px solid #c5cdfe;
   margin: 0 auto 20px;
@@ -2947,13 +2947,14 @@ img.fnone {
   display: flex;
   flex-direction: column;
   max-width: 400px;
+  width: 100%;
 }
 
-.block:last-child {
+.block-item:last-child {
   margin-bottom: 0;
 }
 
-.block h3 {
+.block-item h3 {
   text-align: center;
   color: #1623aa;
   font-size: 20px;
@@ -2961,12 +2962,12 @@ img.fnone {
   margin-bottom: 20px;
 }
 
-.block .block-inner {
+.block-item .block-inner {
   display: flex;
   flex-wrap: wrap;
 }
 
-.block .label-tag {
+.block-item .label-tag {
   color: #1623aa;
   text-decoration: none;
   padding: 10px 15px;
@@ -2975,7 +2976,7 @@ img.fnone {
   border-radius: 7px;
 }
 
-.block p {
+.block-item p {
   font-size: 16px;
   line-height: 1.2;
   color: #1623aa;
@@ -3082,15 +3083,15 @@ img.fnone {
     font-size: 24px;
   }
 
-  .block {
+  .block-item {
     max-width: 420px;
   }
 
-  .block h3 {
+  .block-item h3 {
     font-size: 24px;
   }
 
-  .block .label-tag {
+  .block-item .label-tag {
     font-size: 20px;
   }
 
@@ -3318,18 +3319,18 @@ img.fnone {
     justify-content: space-between;
   }
 
-  .block {
+  .block-item {
     max-width: 440px;
     margin-bottom: 40px;
     border: 5px solid #c5cdfe;
     border-radius: 10px;
   }
 
-  .block:nth-last-child(-n+2) {
+  .block-item:nth-last-child(-n+2) {
     margin-bottom: 0;
   }
 
-  .block .lable-tag {
+  .block-item .lable-tag {
     padding: 15px 20px;
     border-radius: 16px;
   }
