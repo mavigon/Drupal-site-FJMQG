@@ -1,0 +1,108 @@
+.pet-info
+  h2
+    font-size: 24px
+    font-weight: 800
+    text-align: center
+    padding: 10px
+    text-transform: uppercase
+    color: $color_blue
+
+.additional-info
+  max-width: 280px
+  margin: 0 auto
+  text-align: center
+  padding: 20px 0 0
+
+  .label
+    display: block
+    color: $color_blue
+    margin-bottom: 10px
+
+    &:last-child
+      margin-bottom: 0
+
+    a
+      text-decoration: none
+      color: inherit
+
+      &:hover
+        text-decoration: underline
+
+  h2
+    display: none
+
+.tags-block
+  padding: 20px 10px
+
+.block
+  padding: 20px 10px
+  border: 2px solid $block_border_color
+  margin: 0 auto 20px
+  border-radius: 5px
+  display: flex
+  flex-direction: column
+  max-width: 400px
+
+  &:last-child
+    margin-bottom: 0
+
+  h3
+    text-align: center
+    color: $color_blue
+    font-size: 20px
+    font-weight: 500
+    margin-bottom: 20px
+
+  .block-inner
+    display: flex
+    flex-wrap: wrap
+
+  .label-tag
+    color: $color_blue
+    text-decoration: none
+    padding: 10px 15px
+    margin: 0 5px 10px
+    background-color: $bg_tag_color
+    border-radius: 7px
+
+  p
+    font-size: 16px
+    line-height: 1.2
+    color: $color_blue
+    padding: 0 5px
+
+.help-pets
+  padding: 20px 0
+  border-top: 3px solid $color_blue
+  border-bottom: 3px solid $color_blue  
+
+  h2
+    text-align: center
+    color: $color_blue
+    font-size: 20px
+    font-weight: 500
+    margin-bottom: 20px
+
+  .help-pets-inner
+    display: flex
+    justify-content: space-between
+    max-width: 200px
+    margin: 0 auto
+
+.see-more
+  padding: 20px 0
+  text-align: center
+
+  h2
+    text-align: center
+    color: $color_blue
+    font-size: 20px
+    font-weight: 500
+    margin-bottom: 20px
+
+  .btn
+    background-color: $color_light_purple
+    color: $color_blue
+    &:hover
+      background-color: $color_blue
+      color: $color_white

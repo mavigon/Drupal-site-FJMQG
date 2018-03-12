@@ -2485,6 +2485,7 @@ img.fnone {
   width: 100%;
   position: relative;
   background-color: #ffffff;
+  border-bottom: 4px solid #1623aa;
 }
 
 .main-header.mobile-menu-toggled .burger span:first-child,
@@ -2510,6 +2511,7 @@ img.fnone {
 
 .main-header.mobile-menu-toggled .main-header-nav {
   right: 0;
+  visibility: visible;
 }
 
 .burger {
@@ -2616,10 +2618,11 @@ img.fnone {
   position: absolute;
   top: 100%;
   z-index: 100;
+  visibility: hidden;
   width: 100%;
   right: -100%;
   transition-duration: 500ms;
-  transition-property: right;
+  transition-property: all;
   transition-timing-function: cubic-bezier(1, 0, 0, 1);
 }
 
@@ -2893,6 +2896,136 @@ img.fnone {
   text-decoration: none;
 }
 
+.pet-info h2 {
+  font-size: 24px;
+  font-weight: 800;
+  text-align: center;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #1623aa;
+}
+
+.additional-info {
+  max-width: 280px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+.additional-info .label {
+  display: block;
+  color: #1623aa;
+  margin-bottom: 10px;
+}
+
+.additional-info .label:last-child {
+  margin-bottom: 0;
+}
+
+.additional-info .label a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.additional-info .label a:hover {
+  text-decoration: underline;
+}
+
+.additional-info h2 {
+  display: none;
+}
+
+.tags-block {
+  padding: 20px 10px;
+}
+
+.block {
+  padding: 20px 10px;
+  border: 2px solid #c5cdfe;
+  margin: 0 auto 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.block:last-child {
+  margin-bottom: 0;
+}
+
+.block h3 {
+  text-align: center;
+  color: #1623aa;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.block .block-inner {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block .label-tag {
+  color: #1623aa;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin: 0 5px 10px;
+  background-color: #c5cdfe;
+  border-radius: 7px;
+}
+
+.block p {
+  font-size: 16px;
+  line-height: 1.2;
+  color: #1623aa;
+  padding: 0 5px;
+}
+
+.help-pets {
+  padding: 20px 0;
+  border-top: 3px solid #1623aa;
+  border-bottom: 3px solid #1623aa;
+}
+
+.help-pets h2 {
+  text-align: center;
+  color: #1623aa;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.help-pets .help-pets-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+.see-more {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.see-more h2 {
+  text-align: center;
+  color: #1623aa;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.see-more .btn {
+  background-color: #c5cdfe;
+  color: #1623aa;
+}
+
+.see-more .btn:hover {
+  background-color: #1623aa;
+  color: #ffffff;
+}
+
 @media all and (min-width: 750px) {
   .main-header-social {
     max-width: 330px;
@@ -2936,6 +3069,40 @@ img.fnone {
   .events-info h3 {
     font-size: 20px;
   }
+
+  .pet-info h2 {
+    font-size: 32px;
+  }
+
+  .additional-info {
+    max-width: 500px;
+  }
+
+  .additional-info .label {
+    font-size: 24px;
+  }
+
+  .block {
+    max-width: 420px;
+  }
+
+  .block h3 {
+    font-size: 24px;
+  }
+
+  .block .label-tag {
+    font-size: 20px;
+  }
+
+  .help-pets,
+  .see-more {
+    padding: 40px 0;
+  }
+
+  .help-pets h2,
+  .see-more h2 {
+    font-size: 24px;
+  }
 }
 
 @media all and (min-width: 1260px) {
@@ -2946,6 +3113,7 @@ img.fnone {
 
   .main-header-nav {
     position: static;
+    visibility: visible;
   }
 
   .burger {
@@ -3105,6 +3273,81 @@ img.fnone {
     background-color: #4853c9;
     color: #ffffff;
   }
+
+  .pet-info h2 {
+    display: none;
+  }
+
+  .additional-info h2 {
+    display: block;
+    text-align: left;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .pet-info {
+    background-color: #c5cdfe;
+  }
+
+  .pet-info-wr {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .pet-info-wr .foto-list {
+    max-width: 800px;
+  }
+
+  .additional-info {
+    margin: 0 auto 0 0;
+    text-align: left;
+    padding-left: 60px;
+  }
+
+  .tags-block {
+    padding: 40px 0;
+  }
+
+  .tags-block-wr {
+    max-width: 950px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .block {
+    max-width: 440px;
+    margin-bottom: 40px;
+    border: 5px solid #c5cdfe;
+    border-radius: 10px;
+  }
+
+  .block:nth-last-child(-n+2) {
+    margin-bottom: 0;
+  }
+
+  .block .lable-tag {
+    padding: 15px 20px;
+    border-radius: 16px;
+  }
+
+  .help-pets,
+  .see-more {
+    padding: 60px 0;
+  }
+
+  .help-pets h2,
+  .see-more h2 {
+    margin-bottom: 40px;
+  }
+
+  .help-pets {
+    border: none;
+    background-color: #c5cdfe;
+  }
 }
 
 @media all and (min-width: 1550px) {
@@ -3120,6 +3363,12 @@ img.fnone {
   .basic-info-wr,
   .special-animal,
   .coming-events-wr {
+    max-width: 1520px;
+    margin: 0 auto;
+  }
+
+  .help-pets-wr,
+  .see-more-wr {
     max-width: 1520px;
     margin: 0 auto;
   }
