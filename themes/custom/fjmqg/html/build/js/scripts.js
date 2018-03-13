@@ -48,6 +48,31 @@ var msDropdown = require('./jquery.dd');
 
   });
 })(jQuery);
+
+var _loading_spinner = setInterval(function() {
+  if(document.readyState == 'complete') {
+    var $page_loading = document.getElementById('page_loading'),
+        $body = document.body || document.getElementsByTagName('body')[0],
+        speed = 300,
+        delay = 300;
+
+    if((typeof $page_loading != 'undefined') && ($page_loading != null)) {
+      setTimeout(function() {
+        var transition = 'opacity ' + speed.toString() + 'ms ease';
+
+        ['-webkit-transition','-moz-transition','transition'].forEach(function(prefix) {
+          $page_loading.style[prefix] = transition;
+        });
+        $page_loading.style['opacity'] = '0';
+        $page_loading.style['filter']  = 'alpha(opacity=0)';
+        setTimeout(function(){
+          $page_loading.parentNode.removeChild($page_loading);
+        }, speed + 10);
+      }, delay);
+    }
+    clearInterval(_loading_spinner);
+  }
+}, 10);
 },{"./jquery.dd":2,"jcf":5,"jquery":14,"slick-carousel":15}],2:[function(require,module,exports){
 // MSDropDown - jquery.dd.js
 // author: Marghoob Suleman - http://www.marghoobsuleman.com/
