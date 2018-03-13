@@ -2298,20 +2298,6 @@ img.fnone {
 
 /* Slider */
 
-.slick-loading .slick-list {
-  background: #fff url("./ajax-loader.gif") center center no-repeat;
-}
-
-/* Icons */
-
-@font-face {
-  font-family: 'slick';
-  font-weight: normal;
-  font-style: normal;
-  src: url("./fonts/slick.eot");
-  src: url("./fonts/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/slick.woff") format("woff"), url("./fonts/slick.ttf") format("truetype"), url("./fonts/slick.svg#slick") format("svg");
-}
-
 /* Arrows */
 
 .slick-prev,
@@ -2365,7 +2351,6 @@ img.fnone {
 
 .slick-prev:before,
 .slick-next:before {
-  font-family: 'slick';
   font-size: 20px;
   line-height: 1;
   opacity: .75;
@@ -2460,7 +2445,6 @@ img.fnone {
 }
 
 .slick-dots li button:before {
-  font-family: 'slick';
   font-size: 6px;
   line-height: 20px;
   position: absolute;
@@ -2788,7 +2772,6 @@ img.fnone {
   width: 100%;
   height: auto;
   max-height: 200px;
-  height: auto;
   margin-bottom: 10px;
   border-radius: 5px;
 }
@@ -2796,6 +2779,7 @@ img.fnone {
 .basic-info-lists p {
   color: #000000;
   padding: 5px;
+  line-height: 1.4;
 }
 
 .special-animal-inner {
@@ -2879,7 +2863,7 @@ img.fnone {
 }
 
 .events-info p a {
-  color: #000000;
+  color: #ffffff;
 }
 
 .events-info h3,
@@ -3263,6 +3247,10 @@ img.fnone {
     width: 35%;
     color: #000000;
     background-color: #ffffff;
+  }
+
+  .events-info p a {
+    color: #000000;
   }
 
   .btn-search {
