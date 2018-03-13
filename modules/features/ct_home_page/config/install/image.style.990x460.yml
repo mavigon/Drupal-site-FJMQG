@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 990x460
+label: 990x460
+effects:
+  4e968f2e-94e4-4a7f-bee6-3c095fc74a2c:
+    uuid: 4e968f2e-94e4-4a7f-bee6-3c095fc74a2c
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 990
+      height: 460

@@ -15,4 +15,4 @@ dependencies:
   - user
   - views
   - viewsreference
-version: 8.x-1.05
+version: 8.x-1.06

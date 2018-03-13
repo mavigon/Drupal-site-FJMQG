@@ -86,54 +86,58 @@
         </ul>
         <div class="additional-info">
           <h2>{{ label }}</h2>
-          <span class="label">gender: {{ content.field_dog_gender }}</span>
-          <span class="label">age: {{ content.field_dog_age }}</span>
-          <span class="label">breed: {{ content.field_dog_breed }}</span>
-          <span class="label">size: {{ content.field_dog_size }}</span>
-          <span class="label">hair: {{ content.field_dog_hair_type }}</span>
+          <span class="label">{{'Gender'|t}}: {{ content.field_dog_gender }}</span>
+          <span class="label">{{'Age'|t}}: {{ content.field_dog_age }}</span>
+          <span class="label">{{'Breed'|t}}: {{ content.field_dog_breed }}</span>
+          <span class="label">{{'Size'|t}}: {{ content.field_dog_size }}</span>
+          <span class="label">{{'Hair'|t}}: {{ content.field_dog_hair_type }}</span>
         </div>
       </div>
     </section>
         
     <section class="tags-block">
       <div class="tags-block-wr">
-        <div class="block who-i-am">
-          <h3>{{'How am I?'}}</h3>
+        <div class="block-item who-i-am">
+          <h3>{{'How am I?'|t}}</h3>
           <div class="block-inner">
-{#              {{ content.field_dog_how_am_i }}#}
-{#              {{ content.field_dog_how_am_i[0] }}#}
-                {% for key, value in content.field_dog_how_am_i['#items'] %}
-{#                       {% if key > 0 %}#}
-{{key}}
-{#                       //    tutu {{ content.field_dog_how_am_i[key] }}#}
-{#                        {% endif %}#}
-                {% endfor %}
-           {# <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>#}
+            {% for key, value in content.field_dog_how_am_i['#items'] %}
+                {% if key >= 0 %}
+                    {% set url = path(content.field_dog_how_am_i[key]['#url'].routeName, content.field_dog_how_am_i[key]['#url'].routeParameters) %}
+                    <a class="label-tag" href="{{ url }}">
+                        {{ content.field_dog_how_am_i[key]['#title'] }}
+                    </a>
+                {% endif %}
+            {% endfor %}
           </div>
         </div>
-        <div class="block i-like">
-          <h3>head title</h3>
+        <div class="block-item i-like">
+          <h3>{{'I like'|t}}</h3>
           <div class="block-inner">
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
+            {% for key, value in content.field_dog_i_like['#items'] %}
+                {% if key >= 0 %}
+                    {% set url = path(content.field_dog_i_like[key]['#url'].routeName, content.field_dog_i_like[key]['#url'].routeParameters) %}
+                    <a class="label-tag" href="{{ url }}">
+                        {{ content.field_dog_i_like[key]['#title'] }}
+                    </a>
+                {% endif %}
+            {% endfor %}
           </div>
         </div>
-        <div class="block my-ideal-home">
-          <h3>head title</h3>
+        <div class="block-item my-ideal-home">
+          <h3>{{'My ideal home'|t}}</h3>
           <div class="block-inner">
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
-            <a href="#" class="label-tag">text gewg</a>
+            {% for key, value in content.field_dog_my_ideal_home['#items'] %}
+                {% if key >= 0 %}
+                    {% set url = path(content.field_dog_my_ideal_home[key]['#url'].routeName, content.field_dog_my_ideal_home[key]['#url'].routeParameters) %}
+                    <a class="label-tag" href="{{ url }}">
+                        {{ content.field_dog_my_ideal_home[key]['#title'] }}
+                    </a>
+                {% endif %}
+            {% endfor %}
           </div>
         </div>
-        <div class="block my-story">
-          <h3>{{'My story'}}</h3>
+        <div class="block-item my-story">
+          <h3>{{'My story'|t}}</h3>
           <div class="block-inner">
             {{ content.body }}
           </div>
@@ -141,85 +145,19 @@
       </div>
     </section>
     
-  {#  <header>
-        {{ title_prefix }}
-        {% if not page %}
-            <h2{{ title_attributes.addClass('node__title') }}>
-                <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-            </h2>
-        {% endif %}
-        {{ title_suffix }}
-        {% if display_submitted %}
-            <div class="node__meta">
-                {{ author_picture }}
-                <span{{ author_attributes }}>
-          {% trans %}Submitted by {{ author_name }} on {{ date }}{% endtrans %}
-        </span>
-                {{ metadata }}
-            </div>
-        {% endif %}
-    </header>
-    <div{{ content_attributes.addClass('node__content', 'clearfix') }}>
-        <a class="btn" href="{{ path('entity.node.edit_form', {'node': node.id}) }}">{{ 'Edit this profile'|t }}</a>
-        <a class="btn" href="{{ path('entity.node.delete_form', {'node': node.id}) }}">{{ 'Delete this profile'|t }}</a>
-            <table class="table table-user-information">
-                <tbody>
-                {% if content.body['#items'] %}
-                <tr>
-                    <td class="column1"><strong>About:</strong></td>
-                    <td>{{ content.body }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_phone['#items'] %}
-                <tr>
-                    <td class="column1"><strong>Phone:</strong></td>
-                    <td>{{ content.field_ap_phone }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_email['#items'] %}
-                <tr>
-                    <td class="column1"><strong>Email:</strong></td>
-                    <td>{{ content.field_ap_email }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_skype['#items'] %}
-                <tr>
-                    <td class="column1"><strong>Skype:</strong></td>
-                    <td>{{ content.field_ap_skype }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_linkedin['#items'] %}
-                <tr>
-                    <td class="column1"><strong>Linkedin:</strong></td>
-                    <td>{{ content.field_ap_linkedin }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_comments['#items'] %}
-                <tr>
-                    <td class="column1"><strong>Comments:</strong></td>
-                    <td>{{ content.field_ap_comments }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_technologies['#items'] %}
-                <tr>
-                    <td class="column1"><strong>Technologies:</strong></td>
-                    <td>{{ content.field_ap_technologies }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_cv['#items'] %}
-                <tr>
-                    <td class="column1"><strong>CV:</strong></td>
-                    <td>{{ content.field_ap_cv }}</td>
-                </tr>
-                {% endif %}
-                {% if content.field_ap_birthday['#items'] %}
-                <tr>
-                    <td class="column1"><strong>Birthday:</strong></td>
-                    <td>{{ content.field_ap_birthday }}</td>
-                </tr>
-                {% endif %}
-                </tr>
-                </tbody>
-            </table>
-    </div>#}
-{#</article>#}
+    <section class="help-pets">
+      <div class="help-pets-wr">
+        <h2>title text</h2>
+        <div class="help-pets-inner">
+          <a href="#" class="btn btn-donate">Adopt {{ label }}</a>
+          <a href="#" class="btn btn-donate">Donate</a>
+        </div>
+      </div>
+    </section>
+    <section class="see-more">
+      <div class="see-more-wr">
+        <h2>See more</h2>
+        <a href="#" class="btn btn-donate">See more</a>
+      </div>
+    </section>
+  

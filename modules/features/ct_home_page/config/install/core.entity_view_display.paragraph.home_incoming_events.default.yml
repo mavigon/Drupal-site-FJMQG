@@ -8,6 +8,7 @@ dependencies:
     - field.field.paragraph.home_incoming_events.field_incoming_events_link_label
     - field.field.paragraph.home_incoming_events.field_incoming_events_title
     - field.field.paragraph.home_incoming_events.field_recent_events
+    - image.style.990x460
     - paragraphs.paragraphs_type.home_incoming_events
   module:
     - image
@@ -29,7 +30,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ''
+      image_style: 990x460
       image_link: ''
     third_party_settings: {  }
     type: image
