@@ -3011,6 +3011,51 @@ img.fnone {
   color: #ffffff;
 }
 
+.view {
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.view .btn-container {
+  width: 100%;
+}
+
+.view-elem {
+  max-width: 45%;
+  margin: 0 2% 5%;
+}
+
+.view-elem a {
+  text-decoration: none;
+  display: block;
+}
+
+.view-elem img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.view-elem h3 {
+  margin-bottom: 10px;
+  padding-left: 5px;
+  font-weight: 500;
+}
+
+.view-elem .filters-name {
+  color: #000000;
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.view-elem .filters-name li {
+  font-weight: 300;
+}
+
 @media all and (min-width: 750px) {
   .main-header-social {
     max-width: 330px;
@@ -3087,6 +3132,15 @@ img.fnone {
   .help-pets h2,
   .see-more h2 {
     font-size: 24px;
+  }
+
+  .view {
+    max-width: 90%;
+  }
+
+  .view-elem {
+    max-width: 31%;
+    margin: 0 1% 5%;
   }
 }
 
@@ -3337,6 +3391,11 @@ img.fnone {
     border: none;
     background-color: #c5cdfe;
   }
+
+  .view {
+    max-width: 70%;
+    margin: 0 40px 0 auto;
+  }
 }
 
 @media all and (min-width: 1550px) {
@@ -3360,6 +3419,15 @@ img.fnone {
   .see-more-wr {
     max-width: 1520px;
     margin: 0 auto;
+  }
+
+  .list-dogs-wr {
+    max-width: 1520px;
+    margin: 0 auto;
+  }
+
+  .view {
+    margin-right: 0;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
