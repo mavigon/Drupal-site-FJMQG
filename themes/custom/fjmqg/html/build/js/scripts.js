@@ -4,6 +4,7 @@ var jQuery = require('jquery');
 var slick = require('slick-carousel');
 var jcf = require('jcf');
 var msDropdown = require('./jquery.dd');
+var multicheckbox = require('./multicheckbox');
 
 
 ;(function($) {
@@ -46,6 +47,49 @@ var msDropdown = require('./jquery.dd');
       header.css('padding-top', '80px');
     }
 
+    //hover-effect
+    // var mouse = {
+    //     X:  0,
+    //     Y:  0,
+    //     CX: 0,
+    //     CY: 0
+    //   },
+    //   block = {
+    //     X:  mouse.X,
+    //     Y:  mouse.Y,
+    //     CX: mouse.CX,
+    //     CY: mouse.CY
+    //   };
+
+    // $('.view-elem').on('mousemove', function(e) {
+    //   mouse.X   = (e.pageX - $(this).offset().left) - $(this).width() / 2;
+    //   mouse.Y   = (e.pageY - $(this).offset().top) - $(this).height() / 2;
+
+    //   block.CY += (mouse.Y - block.CY) / 42;
+    //   block.CX += (mouse.X - block.CX) / 42;
+  
+    //   $('.view-elem .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)');
+  
+    //   $('.view-elem').css({
+    //     transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'
+    //   });
+    // });
+
+    // $('.view-elem').on('mouseleave', function(e){
+    //   mouse.X = mouse.CX;
+    //   mouse.Y = mouse.CY;
+    // });
+
+    // setInterval(function() {
+    // }, 20);
+
+    //select into checkbox
+    $('select').multicheckbox({
+      label_wrap: '',
+      scroll_wrapper_enabled: true,
+      
+    });
+
   });
 })(jQuery);
 
@@ -73,7 +117,7 @@ var _loading_spinner = setInterval(function() {
     clearInterval(_loading_spinner);
   }
 }, 10);
-},{"./jquery.dd":2,"jcf":5,"jquery":14,"slick-carousel":15}],2:[function(require,module,exports){
+},{"./jquery.dd":2,"./multicheckbox":3,"jcf":6,"jquery":15,"slick-carousel":16}],2:[function(require,module,exports){
 // MSDropDown - jquery.dd.js
 // author: Marghoob Suleman - http://www.marghoobsuleman.com/
 // Date: 10 Nov, 2012
@@ -1460,6 +1504,85 @@ $.fn.extend({
 $.fn.msDropdown = $.fn.msDropDown; //make a copy
 })(jQuery);
 },{}],3:[function(require,module,exports){
+(function() {
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+
+  (function($) {
+    'use strict';
+    var MultiCheckbox;
+    MultiCheckbox = (function() {
+      var DEFAULTS;
+
+      DEFAULTS = {
+        label_wrap: '',
+        scroll_wrapper_enabled: false,
+        selected_element: 'label'
+      };
+
+      function MultiCheckbox(element, options) {
+        this.getOptions = __bind(this.getOptions, this);
+        this.$select = $(element);
+        this.options = this.getOptions(options);
+        this.init();
+      }
+
+      MultiCheckbox.prototype.init = function() {
+        var $container, checkboxes;
+        this.$select.hide();
+        checkboxes = '';
+        this.$select.children('option').each(function() {
+          var $option, checkbox, label_class;
+          $option = $(this);
+          label_class = '';
+          if ($option.data('label-class') != null) {
+            label_class = " class=\"" + ($option.data('label-class')) + "\"";
+          }
+          checkbox = "<label" + label_class + ">\n  <input type=\"checkbox\" value=\"" + ($option.val()) + "\"" + ($option.is(':selected') ? 'checked' : '') + " /> " + ($option.text()) + "\n</label>";
+          return checkboxes += checkbox;
+        });
+        $container = $("<div class=\"multicheckbox-container" + (this.options['scroll_wrapper_enabled'] ? ' multicheckbox-wrap-container' : void 0) + "\">\n  " + checkboxes + "\n</div>");
+        $container = $container.insertAfter(this.$select);
+        if (!!this.options['label_wrap']) {
+          $container.children('label').wrap(this.options['label_wrap']);
+        }
+        return $container.on('change', 'input:checkbox', (function(_this) {
+          return function(e) {
+            var $ch, $option;
+            $ch = $(e.target);
+            $option = _this.$select.children("[value=\"" + ($ch.val()) + "\"]");
+            $option.prop({
+              selected: $ch.is(':checked')
+            });
+            if (_this.options['scroll_wrapper_enabled'] === true) {
+              if ($ch.is(':checked')) {
+                return $ch.closest(_this.options['selected_element']).addClass('multicheckbox-on');
+              } else {
+                return $ch.closest(_this.options['selected_element']).removeClass('multicheckbox-on');
+              }
+            }
+          };
+        })(this));
+      };
+
+      MultiCheckbox.prototype.getOptions = function(options) {
+        return $.extend({}, DEFAULTS, options);
+      };
+
+      return MultiCheckbox;
+
+    })();
+    return jQuery.fn.multicheckbox = function(options) {
+      if (options == null) {
+        options = null;
+      }
+      return this.each(function() {
+        return new MultiCheckbox(this, options);
+      });
+    };
+  })(jQuery);
+
+}).call(this);
+},{}],4:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Button Module
  *
@@ -1550,7 +1673,7 @@ jcf.addModule(function($) {
 
 }(jcf));
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Checkbox Module
  *
@@ -1723,7 +1846,7 @@ jcf.addModule(function($) {
 
 }(jcf));
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 'use strict';
 
 window.jcf = require('./jcf');
@@ -1743,7 +1866,7 @@ module.exports = window.jcf;
 delete window.jcf;
 
 
-},{"./jcf":7,"./jcf.button":3,"./jcf.checkbox":4,"./jcf.file":6,"./jcf.number":8,"./jcf.radio":9,"./jcf.range":10,"./jcf.scrollable":11,"./jcf.select":12,"./jcf.textarea":13}],6:[function(require,module,exports){
+},{"./jcf":8,"./jcf.button":4,"./jcf.checkbox":5,"./jcf.file":7,"./jcf.number":9,"./jcf.radio":10,"./jcf.range":11,"./jcf.scrollable":12,"./jcf.select":13,"./jcf.textarea":14}],7:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : File Module
  *
@@ -1872,7 +1995,7 @@ jcf.addModule(function($) {
 
 }(jcf));
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms
  *
@@ -2332,7 +2455,7 @@ jcf.addModule(function($) {
 	return api;
 }));
 
-},{"jquery":14}],8:[function(require,module,exports){
+},{"jquery":15}],9:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Number Module
  *
@@ -2494,7 +2617,7 @@ jcf.addModule(function($) {
 
 }(jcf));
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Radio Module
  *
@@ -2691,7 +2814,7 @@ jcf.addModule(function($) {
 
 }(jcf));
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Range Module
  *
@@ -3177,7 +3300,7 @@ jcf.addModule(function($) {
 
 }(jcf));
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Scrollbar Module
  *
@@ -3847,7 +3970,7 @@ jcf.addModule(function($, window) {
 
 }(jcf));
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Select Module
  *
@@ -4811,7 +4934,7 @@ jcf.addModule(function($, window) {
 
 }(jcf));
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 /*!
  * JavaScript Custom Forms : Textarea Module
  *
@@ -4971,7 +5094,7 @@ jcf.addModule(function($) {
 
 }(jcf));
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
@@ -15344,7 +15467,7 @@ return jQuery;
 }).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 /*
      _ _      _       _
  ___| (_) ___| | __  (_)___
@@ -18357,4 +18480,4 @@ return jQuery;
 
 }));
 
-},{"jquery":14}]},{},[1]);
+},{"jquery":15}]},{},[1]);

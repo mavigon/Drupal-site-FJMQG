@@ -237,6 +237,11 @@ button::-moz-focus-inner {
   position: fixed !important;
 }
 
+.block .content,
+.node__content {
+  margin-top: 0;
+}
+
 /* radio */
 
 .jcf-radio {
@@ -2691,7 +2696,7 @@ img.fnone {
 .foto-list img {
   width: 100%;
   height: auto;
-  min-height: 185px;
+  min-height: 200px;
   max-height: 570px;
 }
 
