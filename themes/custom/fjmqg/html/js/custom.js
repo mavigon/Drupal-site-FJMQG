@@ -19,11 +19,13 @@ var multicheckbox = require('./multicheckbox');
     
     //mobile navigation events
     var burger  = $('#burger'),
-        header  = $('#main-header');
+        menu  = $('.main-header-nav'),
+        header = $('#main-header');
 
     burger.click(function() {
-      toggleClassByClick(header, 'mobile-menu-toggled');
-    })
+      menu.toggle("slide");
+      header.toggleClass('mobile-menu-toggled');
+    });
 
     //dropdown country-list
     $('#countries').msDropdown();
@@ -46,47 +48,59 @@ var multicheckbox = require('./multicheckbox');
       header.css('padding-top', '80px');
     }
 
-    //hover-effect
-    // var mouse = {
-    //     X:  0,
-    //     Y:  0,
-    //     CX: 0,
-    //     CY: 0
-    //   },
-    //   block = {
-    //     X:  mouse.X,
-    //     Y:  mouse.Y,
-    //     CX: mouse.CX,
-    //     CY: mouse.CY
-    //   };
+    // hover-effect
+    var mouse = {
+        X:  0,
+        Y:  0,
+        CX: 0,
+        CY: 0
+      },
+      block = {
+        X:  mouse.X,
+        Y:  mouse.Y,
+        CX: mouse.CX,
+        CY: mouse.CY
+      };
+    
+    $('.view-elem').each(function() {
+      $(this).on('mousemove', function(e) {
+        mouse.X   = (e.pageX - $(this).offset().left) - $(this).width() / 2;
+        mouse.Y   = (e.pageY - $(this).offset().top) - $(this).height() / 2;
 
-    // $('.view-elem').on('mousemove', function(e) {
-    //   mouse.X   = (e.pageX - $(this).offset().left) - $(this).width() / 2;
-    //   mouse.Y   = (e.pageY - $(this).offset().top) - $(this).height() / 2;
+        block.CY += (mouse.Y - block.CY) / 12;
+        block.CX += (mouse.X - block.CX) / 12;
 
-    //   block.CY += (mouse.Y - block.CY) / 42;
-    //   block.CX += (mouse.X - block.CX) / 42;
-  
-    //   $('.view-elem .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)');
-  
-    //   $('.view-elem').css({
-    //     transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'
-    //   });
-    // });
+        $(this).css({
+          transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'
+        });
 
-    // $('.view-elem').on('mouseleave', function(e){
-    //   mouse.X = mouse.CX;
-    //   mouse.Y = mouse.CY;
-    // });
-
-    // setInterval(function() {
-    // }, 20);
+        $(this).on('mouseleave', function(){
+          $(this).removeAttr('style');
+        })
+      });
+    })
 
     //select into checkbox
     $('select').multicheckbox({
       label_wrap: '',
       scroll_wrapper_enabled: true,
-      
+    });
+
+    // filter tabs
+    var tabs = $('.form-item'),
+        viewFilters = $('.view-filters'),
+        titleFilters = $('#filter');
+
+
+    tabs.each(function() {
+      $(this).click(function() {
+        $(this).toggleClass('is-active');
+      })
+    })
+
+    titleFilters.click(function() {
+      viewFilters.slideToggle("fast");
+      $(this).toggleClass('is-active');
     });
 
   });
