@@ -199,6 +199,7 @@ main {
   padding: 10px 10px;
   border-radius: 5px;
   transition: background 0.3s ease;
+  text-align: center;
 }
 
 .btn-donate {
@@ -2732,6 +2733,12 @@ img.fnone {
   right: 3px;
 }
 
+.foto-list .btn-container p {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
 .basic-info-wr {
   padding: 20px;
 }
@@ -2983,6 +2990,10 @@ img.fnone {
   justify-content: space-between;
   max-width: 200px;
   margin: 0 auto;
+}
+
+.help-pets .help-pets-inner .btn {
+  margin: 0 10px;
 }
 
 .see-more {
@@ -3402,6 +3413,10 @@ img.fnone {
     bottom: 20%;
     left: 50%;
     transform: translateX(-50%);
+  }
+
+  .foto-list .btn-container p {
+    color: #000000;
   }
 
   .basic-info-wr {

@@ -23,7 +23,7 @@ var multicheckbox = require('./multicheckbox');
         header = $('#main-header');
 
     burger.click(function() {
-      menu.toggle("slide");
+      menu.toggle('slide');
       header.toggleClass('mobile-menu-toggled');
     });
 
@@ -99,7 +99,7 @@ var multicheckbox = require('./multicheckbox');
     })
 
     titleFilters.click(function() {
-      viewFilters.slideToggle("fast");
+      viewFilters.slideToggle('fast');
       $(this).toggleClass('is-active');
     });
 
