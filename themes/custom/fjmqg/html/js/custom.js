@@ -3,6 +3,7 @@ var jQuery = require('jquery');
 var slick = require('slick-carousel');
 var jcf = require('jcf');
 var msDropdown = require('./jquery.dd');
+var multicheckbox = require('./multicheckbox');
 
 
 ;(function($) {
@@ -44,6 +45,49 @@ var msDropdown = require('./jquery.dd');
     if($('#toolbar-administration').length) {
       header.css('padding-top', '80px');
     }
+
+    //hover-effect
+    // var mouse = {
+    //     X:  0,
+    //     Y:  0,
+    //     CX: 0,
+    //     CY: 0
+    //   },
+    //   block = {
+    //     X:  mouse.X,
+    //     Y:  mouse.Y,
+    //     CX: mouse.CX,
+    //     CY: mouse.CY
+    //   };
+
+    // $('.view-elem').on('mousemove', function(e) {
+    //   mouse.X   = (e.pageX - $(this).offset().left) - $(this).width() / 2;
+    //   mouse.Y   = (e.pageY - $(this).offset().top) - $(this).height() / 2;
+
+    //   block.CY += (mouse.Y - block.CY) / 42;
+    //   block.CX += (mouse.X - block.CX) / 42;
+  
+    //   $('.view-elem .circleLight').css('background', 'radial-gradient(circle at ' + mouse.X + 'px ' + mouse.Y + 'px, #fff, transparent)');
+  
+    //   $('.view-elem').css({
+    //     transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'
+    //   });
+    // });
+
+    // $('.view-elem').on('mouseleave', function(e){
+    //   mouse.X = mouse.CX;
+    //   mouse.Y = mouse.CY;
+    // });
+
+    // setInterval(function() {
+    // }, 20);
+
+    //select into checkbox
+    $('select').multicheckbox({
+      label_wrap: '',
+      scroll_wrapper_enabled: true,
+      
+    });
 
   });
 })(jQuery);
