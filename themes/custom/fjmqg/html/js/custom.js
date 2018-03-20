@@ -1,5 +1,5 @@
 //import libraries
-var jQuery = require('jquery');
+// var jQuery = require('jquery');
 var slick = require('slick-carousel');
 var jcf = require('jcf');
 var msDropdown = require('./jquery.dd');
