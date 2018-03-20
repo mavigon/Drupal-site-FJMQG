@@ -49,6 +49,8 @@
     border-bottom: 1px solid #e8e8e8
     position: relative
     cursor: pointer
+    float: none
+    margin: 0
     &:after
       display: block
       content: ''
@@ -86,6 +88,7 @@
       border-radius: 5px
       transition: background 0.3s ease
       background-color: $btn_bg_color
+      background-image: none
       cursor: pointer
 
       &:hover
@@ -97,7 +100,7 @@
   label
     display: block
     position: relative
-    padding: 15px 0 15px 15px
+    padding: 5px 0 5px 15px
     line-height: 1.2
     cursor: pointer
     max-width: 200px
@@ -108,7 +111,7 @@
       position: absolute
       width: 20px
       height: 20px
-      top: 50%
+      top: 38%
       right: -50px
       transform: translateY(-50%)
       background: #fcfff4
@@ -123,7 +126,7 @@
       position: absolute
       width: 9px
       height: 5px
-      top: 45%
+      top: 33%
       right: -45px
       transform: translateY(-50%)
       border: 3px solid #333

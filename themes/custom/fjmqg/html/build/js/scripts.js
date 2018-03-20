@@ -1,6 +1,6 @@
 (function(){function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s}return e})()({1:[function(require,module,exports){
 //import libraries
-var jQuery = require('jquery');
+// var jQuery = require('jquery');
 var slick = require('slick-carousel');
 var jcf = require('jcf');
 var msDropdown = require('./jquery.dd');
@@ -131,7 +131,7 @@ var _loading_spinner = setInterval(function() {
     clearInterval(_loading_spinner);
   }
 }, 10);
-},{"./jquery.dd":2,"./multicheckbox":3,"jcf":6,"jquery":15,"slick-carousel":16}],2:[function(require,module,exports){
+},{"./jquery.dd":2,"./multicheckbox":3,"jcf":6,"slick-carousel":16}],2:[function(require,module,exports){
 // MSDropDown - jquery.dd.js
 // author: Marghoob Suleman - http://www.marghoobsuleman.com/
 // Date: 10 Nov, 2012
@@ -5109,8 +5109,6 @@ jcf.addModule(function($) {
 }(jcf));
 
 },{}],15:[function(require,module,exports){
-(function (global){
-; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /*!
  * jQuery JavaScript Library v3.3.1
  * https://jquery.com/
@@ -15476,11 +15474,6 @@ if ( !noGlobal ) {
 return jQuery;
 } );
 
-; browserify_shim__define__module__export__(typeof $ != "undefined" ? $ : window.$);
-
-}).call(global, undefined, undefined, undefined, undefined, function defineExport(ex) { module.exports = ex; });
-
-}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],16:[function(require,module,exports){
 /*
      _ _      _       _
