@@ -21,10 +21,6 @@
         &:nth-child(3)
           transform: rotate(-45deg)
 
-    .main-header-nav
-      right: 0
-      visibility: visible
-
 .burger
   position: relative
   width: 24px
@@ -114,12 +110,9 @@
   position: absolute
   top: 100%
   z-index: 100
-  visibility: hidden
+  left: 0
   width: 100%
-  right: -100%
-  transition-duration: 500ms
-  transition-property: all
-  transition-timing-function: cubic-bezier(1,0,0,1)
+  display: none
 
 .main-header-nav-items
   li
