@@ -39,22 +39,22 @@ gulp.task('sass', function() {
 });
 
 //browserify file
-gulp.task('scripts', function() {
-	return browserify('./js/custom.js')
-		.bundle()
-		.pipe(source('scripts.js'))
-		.pipe(gulp.dest('./build/js'));
-});
+// gulp.task('scripts', function() {
+// 	return browserify('./js/custom.js')
+// 		.bundle()
+// 		.pipe(source('scripts.js'))
+// 		.pipe(gulp.dest('./build/js'));
+// });
 
 // js tasks
-// gulp.task('scripts', ['bundle'], function() {
-// 	return gulp.src(['!./js/custom.js', './js/bundle.js', './js/*.js'], { base: 'js' })
-// 		.pipe(sourcemaps.init())
-// 		.pipe(concat('scripts.js'))
-// 		// .pipe(uglify())
-// 		.pipe(gulp.dest("./build/js"))
-// 		.pipe(sourcemaps.write('./js/maps'));
-// });
+gulp.task('scripts', function() {
+	return gulp.src(['!./node_modules/jquery/dist/jquery.js','./node_modules/slick-carousel/slick/slick.js', './js/jquery.dd.js', './js/multicheckbox.js/', './js/custom.js'], { base: 'js' })
+		.pipe(sourcemaps.init())
+		.pipe(concat('scripts.js'))
+		// .pipe(uglify())
+		.pipe(gulp.dest("./build/js"))
+		.pipe(sourcemaps.write('./js/maps'));
+});
 
 // html templates
 gulp.task('pages', function () {

@@ -3020,7 +3020,6 @@ img.fnone {
 }
 
 .views-element-container {
-  padding: 20px 0;
   position: relative;
 }
 
@@ -3196,14 +3195,14 @@ img.fnone {
   display: none;
   background-color: #f6f6f6;
   z-index: 90;
-  top: 0;
+  top: 45px;
   height: 100%;
 }
 
 .title-filter {
   cursor: pointer;
   position: relative;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   padding: 10px 0px 10px 7%;
   font-size: 20px;
   font-weight: 500;
@@ -3313,7 +3312,7 @@ img.fnone {
 
   .view-elem {
     max-width: 31%;
-    margin: 0 1% 5%;
+    margin: 0 1% 30px;
   }
 }
 
@@ -3588,6 +3587,7 @@ img.fnone {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 20px 0;
   }
 
   .view-filters {
