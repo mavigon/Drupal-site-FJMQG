@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 330x180
+label: 330x180
+effects:
+  3cbf6753-d6b3-4d37-849a-685e0e66e08e:
+    uuid: 3cbf6753-d6b3-4d37-849a-685e0e66e08e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 330
+      height: 180
