@@ -1,17 +1,12 @@
 //import libraries
 // var jQuery = require('jquery');
-var slick = require('slick-carousel');
-var jcf = require('jcf');
-var msDropdown = require('./jquery.dd');
-var multicheckbox = require('./multicheckbox');
+// var slick = require('slick-carousel');
+// var jcf = require('jcf');
+// var msDropdown = require('./jquery.dd');
+// var multicheckbox = require('./multicheckbox');
 
 
 ;(function($) {
-  //toogle class function
-  function toggleClassByClick (blockToggleClass, className) {
-    blockToggleClass.toggleClass(className)
-  };
-
   $(document).ready(function() {
 
     //fix ios touch events
