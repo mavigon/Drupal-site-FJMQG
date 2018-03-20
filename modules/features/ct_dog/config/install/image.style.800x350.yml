@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 800x350
+label: 800x350
+effects:
+  9adea199-4f63-469e-aba2-14a5262771d1:
+    uuid: 9adea199-4f63-469e-aba2-14a5262771d1
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 800
+      height: 350

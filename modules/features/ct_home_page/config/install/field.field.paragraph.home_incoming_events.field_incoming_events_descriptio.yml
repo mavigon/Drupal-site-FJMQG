@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_incoming_events_descriptio
+    - paragraphs.paragraphs_type.home_incoming_events
+id: paragraph.home_incoming_events.field_incoming_events_descriptio
+field_name: field_incoming_events_descriptio
+entity_type: paragraph
+bundle: home_incoming_events
+label: 'Incoming events description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

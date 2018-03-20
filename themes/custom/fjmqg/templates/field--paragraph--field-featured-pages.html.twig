@@ -1,0 +1,17 @@
+{% for item in items %}
+    {% set page = item.content['#options'].entity %}
+    <li>
+        <a href="{{ path('entity.node.canonical', {'node': page.id}) }}">
+          <h3>{{ page.title.value }}</h3>
+          {% set imagestyle = {
+            '#theme':      'image_style',
+            '#style_name': '390x200',
+            '#uri':        page.field_page_image.entity.uri.value,
+            '#alt':        page.title.value,
+          } %}
+
+          {{ imagestyle }}
+          {{page.get('body').summary|raw}}
+        </a>
+    </li>
+{% endfor %}

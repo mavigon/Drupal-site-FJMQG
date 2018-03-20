@@ -1,0 +1,10 @@
+{% for item in items %}
+    {% set slide = item.content['#paragraph'] %}
+    <li>
+      <img src="{{ file_url(slide.field_slider_image.entity.uri.value| image_style('1520x570')) }}" alt="slide image">
+      <div class="btn-container">
+        <p>{{ slide.field_slider_description.value }}</p>
+        <a class="btn btn-adopt" href="{{ slide.field_slider_button_link.value }}">{{ slide.field_slider_button_label.value }}</a>
+      </div>
+    </li>
+{% endfor %}

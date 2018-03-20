@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Home page incoming events template.
+ *
+ * @ingroup themeable
+ */
+#}
+
+<section {{ attributes.addClass('coming-events') }}>
+  <div class="coming-events-wr">
+    <div class="coming-events-inner">
+      {{ content.field_incoming_events_image }}
+      <div class="events-info">
+        <h3>{{ content.field_incoming_events_title }}</h3>
+        {{ content.field_recent_events }}
+        <div class="btn-container">
+          <p>{{ content.field_incoming_events_descriptio }}</p>
+          <a class="btn btn-search" href="{{ content.field_incoming_events_link }}">{{ content.field_incoming_events_link_label }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

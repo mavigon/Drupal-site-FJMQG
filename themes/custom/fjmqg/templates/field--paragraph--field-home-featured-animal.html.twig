@@ -1,0 +1,12 @@
+{% for item in items %}
+    {% set dog = item.content['#options'].entity %}
+    <div class="add-info">
+      <h3>some text</h3>
+      <h2>{{ dog.title.value }}</h2>
+      <p>{{dog.get('body').summary}}</p>
+      <div class="btn-container">
+        <a class="btn btn-search" href="{{ path('entity.node.canonical', {'node': dog.id}) }}">Search</a>
+      </div>
+    </div>
+    <img src="{{ file_url(dog.field_dog_photo.entity.uri.value| image_style('990x460')) }}" alt="{{ dog.title.value }}">
+{% endfor %}

@@ -7,8 +7,9 @@ dependencies:
   - file
   - image
   - node
+  - paragraphs
   - path
   - rdf
   - text
   - user
-version: 8.x-1.01
+version: 8.x-1.02

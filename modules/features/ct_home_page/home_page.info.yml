@@ -3,11 +3,16 @@ description: 'Provides Home page content type and related configuration. '
 type: module
 core: 8.x
 dependencies:
+  - datetime
   - entity_reference_revisions
   - field
+  - file
+  - image
   - menu_ui
   - node
   - paragraphs
   - path
   - user
-version: 8.x-1.01
+  - views
+  - viewsreference
+version: 8.x-1.06

@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.home_incoming_events.field_incoming_events_descriptio
+    - field.field.paragraph.home_incoming_events.field_incoming_events_image
+    - field.field.paragraph.home_incoming_events.field_incoming_events_link
+    - field.field.paragraph.home_incoming_events.field_incoming_events_link_label
+    - field.field.paragraph.home_incoming_events.field_incoming_events_title
+    - field.field.paragraph.home_incoming_events.field_recent_events
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.home_incoming_events
+  module:
+    - image
+    - viewsreference
+id: paragraph.home_incoming_events.default
+targetEntityType: paragraph
+bundle: home_incoming_events
+mode: default
+content:
+  field_incoming_events_descriptio:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_incoming_events_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_incoming_events_link:
+    weight: 5
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_incoming_events_link_label:
+    weight: 6
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_incoming_events_title:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_recent_events:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: '60'
+      placeholder: ''
+    third_party_settings: {  }
+    type: viewsreference_autocomplete
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

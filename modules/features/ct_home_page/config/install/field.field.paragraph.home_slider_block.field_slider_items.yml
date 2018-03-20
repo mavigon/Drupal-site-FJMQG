@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_slider_items
+    - paragraphs.paragraphs_type.home_slider
+    - paragraphs.paragraphs_type.home_slider_block
+  module:
+    - entity_reference_revisions
+id: paragraph.home_slider_block.field_slider_items
+field_name: field_slider_items
+entity_type: paragraph
+bundle: home_slider_block
+label: 'Slider Items'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles:
+      home_slider: home_slider
+    target_bundles_drag_drop:
+      home_featured_animal:
+        weight: 6
+        enabled: false
+      home_featured_pages:
+        weight: 7
+        enabled: false
+      home_incoming_events:
+        weight: 8
+        enabled: false
+      home_slider:
+        enabled: true
+        weight: 9
+      home_slider_block:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

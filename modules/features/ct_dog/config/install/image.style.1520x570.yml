@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 1520x570
+label: 1520x570
+effects:
+  22950ca7-6bfa-44b6-abe3-f8fa52503072:
+    uuid: 22950ca7-6bfa-44b6-abe3-f8fa52503072
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1520
+      height: 570
