@@ -4549,24 +4549,6 @@ $.fn.msDropdown = $.fn.msDropDown; //make a copy
         })
       });
     })
-
-    // filter tabs
-    var tabs = $('.form-item'),
-        viewFilters = $('.view-filters'),
-        titleFilters = $('#filter');
-
-
-    tabs.each(function() {
-      $(this).click(function() {
-        $(this).toggleClass('is-active');
-      })
-    })
-
-    titleFilters.click(function() {
-      viewFilters.slideToggle('fast');
-      $(this).toggleClass('is-active');
-    });
-
   });
 })(jQuery);
 
