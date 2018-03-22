@@ -3196,7 +3196,7 @@ img.fnone {
   background-color: #f6f6f6;
   z-index: 90;
   top: 45px;
-  height: 100%;
+  height: auto;
 }
 
 .title-filter {
@@ -3594,6 +3594,7 @@ img.fnone {
     position: static;
     max-width: 300px;
     display: block !important;
+    height: 100%;
   }
 }
 
