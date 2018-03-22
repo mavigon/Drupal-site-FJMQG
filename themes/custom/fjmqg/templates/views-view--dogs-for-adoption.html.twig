@@ -32,20 +32,31 @@
  * @ingroup themeable
  */
 #}
-{% if exposed %}
-  <div class="title-filter" id="filter">
-    <div class="title-filter-wr">
-      Filter
-    </div>
-  </div>
-  <div class="view-filters">
-    {{ exposed }}
-  </div>
-{% endif %}
-{{ rows }}
 
-{% if pager %}
-    <div class="btn-container">
-        {{ pager }}
-    </div>
-{% endif %}
+{%
+  set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+%}
+<div{{ attributes.addClass(classes) }}>
+
+    {% if exposed %}
+      <div class="title-filter" id="filter">
+        <div class="title-filter-wr">
+          Filter
+        </div>
+      </div>
+      <div class="view-filters">
+        {{ exposed }}
+      </div>
+    {% endif %}
+
+    {{ rows }}
+
+    {% if pager %}
+        <div class="btn-container">
+            {{ pager }}
+        </div>
+    {% endif %}
+
+</div>
