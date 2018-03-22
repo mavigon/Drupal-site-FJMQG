@@ -4517,38 +4517,7 @@ $.fn.msDropdown = $.fn.msDropDown; //make a copy
     if($('#toolbar-administration').length) {
       header.css('padding-top', '80px');
     }
-
-    // hover-effect
-    var mouse = {
-        X:  0,
-        Y:  0,
-        CX: 0,
-        CY: 0
-      },
-      block = {
-        X:  mouse.X,
-        Y:  mouse.Y,
-        CX: mouse.CX,
-        CY: mouse.CY
-      };
     
-    $('.view-elem').each(function() {
-      $(this).on('mousemove', function(e) {
-        mouse.X   = (e.pageX - $(this).offset().left) - $(this).width() / 2;
-        mouse.Y   = (e.pageY - $(this).offset().top) - $(this).height() / 2;
-
-        block.CY += (mouse.Y - block.CY) / 12;
-        block.CX += (mouse.X - block.CX) / 12;
-
-        $(this).css({
-          transform : 'scale(1.03) translate(' + (block.CX * 0.05) + 'px, ' + (block.CY * 0.05) + 'px) rotateX(' + (block.CY * 0.05) + 'deg) rotateY(' + (block.CX * 0.05) + 'deg)'
-        });
-
-        $(this).on('mouseleave', function(){
-          $(this).removeAttr('style');
-        })
-      });
-    })
   });
 })(jQuery);
 
