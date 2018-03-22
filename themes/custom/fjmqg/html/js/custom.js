@@ -75,12 +75,6 @@
       });
     })
 
-    //select into checkbox
-    $('select').multicheckbox({
-      label_wrap: '',
-      scroll_wrapper_enabled: true,
-    });
-
     // filter tabs
     var tabs = $('.form-item'),
         viewFilters = $('.view-filters'),
