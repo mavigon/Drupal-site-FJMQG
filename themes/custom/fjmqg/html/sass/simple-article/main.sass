@@ -1,0 +1,68 @@
+.simple-article
+  position: relative
+
+  .simple-article__wr
+    padding: 20px
+    margin: 0 auto
+
+  h3, p
+    margin-bottom: 20px
+    line-height: 1.4
+
+  h3
+    font-weight: 500  
+
+  img
+    display: block
+    margin: 0 auto
+    max-width: 280px
+    height: auto
+
+.aside-list-links
+  position: absolute
+  top: 60px
+  right: 0
+
+  li
+    text-align: right
+    min-width: 250px
+    padding: 20px 40px 20px 0
+    border-top: 2px solid $color_blue
+
+    &:last-child
+      border-bottom: 2px solid $color_blue
+    
+    a
+      color: $color_blue
+      text-decoration: none
+
+      &:hover
+        color: $color_light_blue
+  
+  .list-links
+    background-color: $color_white
+    display: none
+
+  .show
+    display: block        
+
+.aside-list-links__toogle
+  position: absolute
+  top: 0
+  left: 0
+  width: 50px
+  height: 30px
+  background-color: $color_blue
+  transform: translateX(-100%)
+  border-top-left-radius: 5px
+  border-bottom-left-radius: 5px
+  padding: 7px 0 0 10px
+  cursor: pointer
+
+  span
+    display: inline-block
+    height: 15px
+    width: 15px
+    border-top: 3px solid $color_white
+    border-left: 3px solid $color_white
+    transform: rotate(-45deg)
