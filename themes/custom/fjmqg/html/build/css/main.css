@@ -3019,8 +3019,20 @@ img.fnone {
   color: #ffffff;
 }
 
-.views-element-container {
+.views-element-container-dogs {
   position: relative;
+}
+
+.views-element-container-dogs .btn-container {
+  margin: 0 auto;
+}
+
+.views-element-container-dogs .pager_item a {
+  color: #ffffff;
+}
+
+.views-element-container-dogs .pager_item .is-active a {
+  color: #ffffff;
 }
 
 .view {
@@ -3226,6 +3238,18 @@ img.fnone {
 
 .is-active:after {
   transform: rotate(135deg);
+}
+
+.dogs .add-info h3,
+.dogs .add-info .btn-container {
+  text-align: right;
+  padding: 30px 30px 0 0;
+}
+
+.cats .add-info h3,
+.cats .add-info .btn-container {
+  text-align: left;
+  padding: 30px 0 0 30px;
 }
 
 @media all and (min-width: 750px) {
@@ -3581,7 +3605,7 @@ img.fnone {
     display: none;
   }
 
-  .views-element-container {
+  .views-element-container-dogs {
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
@@ -3595,6 +3619,18 @@ img.fnone {
     max-width: 300px;
     display: block !important;
     height: 100%;
+  }
+
+  .dogs .add-info h3,
+  .dogs .add-info .btn-container {
+    text-align: center;
+    padding: 0;
+  }
+
+  .cats .add-info h3,
+  .cats .add-info .btn-container {
+    text-align: center;
+    padding: 0;
   }
 }
 
@@ -3622,7 +3658,7 @@ img.fnone {
   }
 
   .list-dogs-wr,
-  .views-element-container {
+  .views-element-container-dogs {
     max-width: 1520px;
     margin: 0 auto;
   }
