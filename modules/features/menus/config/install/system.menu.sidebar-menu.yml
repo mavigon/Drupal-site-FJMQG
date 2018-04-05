@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: sidebar-menu
+label: 'Sidebar menu'
+description: 'Menu on basic page sidebar'
+locked: false

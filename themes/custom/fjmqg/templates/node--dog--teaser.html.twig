@@ -70,8 +70,20 @@
  *   in different view modes.
  */
 #}
-    
-<div class="view-elem">
+{%
+  set classes = [
+    'node',
+    'view-elem',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+
+<div {{ attributes.addClass(classes) }}>
     <a href="{{ url }}">
       <img src="{{ file_url(node.field_dog_photo.entity.uri.value| image_style('330x180')) }}"
         alt="{{ node.field_dog_photo.alt }}">

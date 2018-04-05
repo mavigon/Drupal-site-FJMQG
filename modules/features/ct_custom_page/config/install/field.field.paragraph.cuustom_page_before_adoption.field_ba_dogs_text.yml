@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_ba_dogs_text
+    - paragraphs.paragraphs_type.cuustom_page_before_adoption
+id: paragraph.cuustom_page_before_adoption.field_ba_dogs_text
+field_name: field_ba_dogs_text
+entity_type: paragraph
+bundle: cuustom_page_before_adoption
+label: 'BA dogs text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

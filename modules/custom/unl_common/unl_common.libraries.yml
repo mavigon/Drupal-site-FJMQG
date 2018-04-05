@@ -1,0 +1,7 @@
+unl_common:
+ version: 1.0
+ js:
+  js/unl_common.js: {}
+ dependencies:
+    - core/jquery
+    - core/jquery.ui

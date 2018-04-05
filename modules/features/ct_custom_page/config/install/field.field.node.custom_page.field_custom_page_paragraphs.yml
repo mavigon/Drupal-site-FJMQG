@@ -1,0 +1,40 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_custom_page_paragraphs
+    - node.type.custom_page
+  module:
+    - entity_reference_revisions
+id: node.custom_page.field_custom_page_paragraphs
+field_name: field_custom_page_paragraphs
+entity_type: node
+bundle: custom_page
+label: 'Custom page paragraphs'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    negate: 0
+    target_bundles: null
+    target_bundles_drag_drop:
+      home_featured_animal:
+        weight: 6
+        enabled: false
+      home_featured_pages:
+        weight: 7
+        enabled: false
+      home_incoming_events:
+        weight: 8
+        enabled: false
+      home_slider:
+        weight: 9
+        enabled: false
+      home_slider_block:
+        weight: 10
+        enabled: false
+field_type: entity_reference_revisions

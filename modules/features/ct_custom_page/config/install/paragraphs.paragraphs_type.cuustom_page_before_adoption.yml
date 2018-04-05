@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+id: cuustom_page_before_adoption
+label: 'Custom page: Before adoption'
+icon_uuid: null
+description: ''
+behavior_plugins: {  }

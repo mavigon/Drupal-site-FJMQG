@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_cats_image
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_cats_link
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_cats_text
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_image
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_link
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_text
+    - image.style.990x460
+    - paragraphs.paragraphs_type.cuustom_page_before_adoption
+  module:
+    - image
+    - link
+id: paragraph.cuustom_page_before_adoption.default
+targetEntityType: paragraph
+bundle: cuustom_page_before_adoption
+mode: default
+content:
+  field_ba_cats_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: 990x460
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_ba_cats_link:
+    weight: 5
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: '0'
+      target: '0'
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_ba_cats_text:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_ba_dogs_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: 990x460
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_ba_dogs_link:
+    weight: 2
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_ba_dogs_text:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden: {  }

@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Home page Slider block template.
+ *
+ * @ingroup themeable
+ */
+#}
+<section class="special-animal dogs">
+<div class="special-animal-wr">
+  <div class="special-animal-inner">
+    {{ content.field_ba_dogs_image }}
+    <div class="add-info">
+      <h3>{{ content.field_ba_dogs_text }}</h3>
+      <div class="btn-container">
+        {{ content.field_ba_dogs_link }}
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="special-animal cats">
+  <div class="special-animal-wr">
+    <div class="special-animal-inner">
+      <div class="add-info">
+        <h3>{{ content.field_ba_cats_text }}</h3>
+        <div class="btn-container">
+{#          <a class="btn btn-search" href="#">Search</a>#}
+          {{ content.field_ba_cats_link }}
+        </div>
+      </div>
+      {{ content.field_ba_cats_image }}
+    </div>
+  </div>
+</section>
