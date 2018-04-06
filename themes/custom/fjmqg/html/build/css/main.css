@@ -3414,6 +3414,16 @@ img.fnone {
     font-size: 24px;
   }
 
+  .help-pets .btn,
+  .see-more .btn {
+    min-width: 150px;
+    font-size: 16px;
+  }
+
+  .help-pets .help-pets-inner {
+    max-width: 300px;
+  }
+
   .view {
     max-width: 90%;
   }
@@ -3737,7 +3747,7 @@ img.fnone {
   }
 
   .simple-article .simple-article__wr {
-    max-width: 1200px;
+    max-width: 1010px;
   }
 
   .aside-list-links__toogle {
@@ -3785,6 +3795,10 @@ img.fnone {
   .simple-article {
     max-width: 1520px;
     margin: 0 auto;
+  }
+
+  .simple-article .simple-article__wr {
+    max-width: 1200px;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
