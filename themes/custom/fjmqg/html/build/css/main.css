@@ -3024,6 +3024,7 @@ img.fnone {
 }
 
 .views-element-container-dogs .pager {
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -3698,7 +3699,7 @@ img.fnone {
   }
 
   .list-dogs {
-    max-width: 75%;
+    width: 75%;
   }
 
   .view {
