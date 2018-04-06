@@ -3023,16 +3023,8 @@ img.fnone {
   position: relative;
 }
 
-.views-element-container-dogs .btn-container {
+.views-element-container-dogs .pager {
   margin: 0 auto;
-}
-
-.views-element-container-dogs .pager_item a {
-  color: #ffffff;
-}
-
-.views-element-container-dogs .pager_item .is-active a {
-  color: #ffffff;
 }
 
 .view {
