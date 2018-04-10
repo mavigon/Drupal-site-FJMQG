@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.custom_page.field_custom_page_paragraphs
     - node.type.custom_page
   module:
     - user
@@ -14,4 +15,6 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_custom_page_paragraphs: true
+  langcode: true

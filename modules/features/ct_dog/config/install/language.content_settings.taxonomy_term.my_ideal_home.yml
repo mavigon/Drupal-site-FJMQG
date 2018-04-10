@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.my_ideal_home
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: taxonomy_term.my_ideal_home
+target_entity_type_id: taxonomy_term
+target_bundle: my_ideal_home
+default_langcode: site_default
+language_alterable: false

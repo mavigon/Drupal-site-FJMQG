@@ -63,4 +63,5 @@ hidden:
   field_dog_i_like: true
   field_dog_my_ideal_home: true
   field_dog_size: true
+  langcode: true
   links: true

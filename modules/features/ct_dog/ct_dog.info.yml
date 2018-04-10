@@ -3,11 +3,13 @@ description: 'Provides Dog content type and related configuration. '
 type: module
 core: 8.x
 dependencies:
+  - content_translation
   - datetime
   - field
   - field_formatter_range
   - file
   - image
+  - language
   - menu_ui
   - node
   - paragraphs
@@ -16,4 +18,4 @@ dependencies:
   - text
   - user
   - views
-version: 8.x-1.05
+version: 8.x-1.06

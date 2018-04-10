@@ -29,9 +29,9 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('main-footer-nav-items') }}>
+      <ul{{ attributes.addClass('list-links') }}>
     {% else %}
-      <ul class="menu list-links">
+      <ul class="menu">
     {% endif %}
     {% for item in items %}
       {%

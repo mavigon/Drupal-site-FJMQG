@@ -5,8 +5,13 @@
       <div class="main-header-inner">
         <div class="main-header-social">
           <select name="countries" id="countries" class="select-lng">
-            <option value='ad' data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-es" data-title="Spain"></option>
-            <option value='ae' data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-us" data-title="England"></option>
+            {% if (lang == 'en') %}
+              <option value='ae' data-href="{{ url('<front>') }}" data-lang="en" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-us" data-title="England"></option>
+              <option value='ad' data-href="{{ url('<front>') }}" data-lang="es" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-es" data-title="Spain"></option>
+            {% else %}
+              <option value='ad' data-href="{{ url('<front>') }}" data-lang="es" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-es" data-title="Spain"></option>
+              <option value='ae' data-href="{{ url('<front>') }}" data-lang="en" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-us" data-title="England"></option>
+            {% endif %}
           </select>
           <a href="#" class="social-link social-link--fb"></a>
           <a href="#" class="social-link social-link--inst"></a>

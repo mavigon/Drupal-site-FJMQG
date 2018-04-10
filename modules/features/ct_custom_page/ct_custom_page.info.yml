@@ -13,4 +13,4 @@ dependencies:
   - paragraphs
   - path
   - user
-version: 8.x-1.02
+version: 8.x-1.03

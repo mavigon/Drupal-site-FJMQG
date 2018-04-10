@@ -25,3 +25,8 @@ function fjmqg_preprocess_node__dog__teaser(&$variables) {
     'return_as_object' => TRUE,
   ]);
 }
+
+function fjmqg_preprocess_region(&$variables) {
+  $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['lang'] = $language;
+}
