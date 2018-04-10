@@ -3,7 +3,7 @@
  * Contains js for the accordion example.
  */
 
-(function ($) {
+(function ($, Drupal) {
 
     Drupal.behaviors.unlCommon = {
         attach: function (context, settings) {
@@ -81,4 +81,4 @@
         }
     };
 
-})(jQuery);
+})(jQuery, Drupal);
