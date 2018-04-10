@@ -23,7 +23,7 @@ content:
     third_party_settings: {  }
   field_page_image:
     weight: 102
-    label: above
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
@@ -33,4 +33,7 @@ content:
   links:
     weight: 101
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

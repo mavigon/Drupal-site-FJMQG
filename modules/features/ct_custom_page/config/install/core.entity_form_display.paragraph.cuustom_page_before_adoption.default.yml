@@ -1,0 +1,78 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_cats_image
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_cats_link
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_cats_text
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_image
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_link
+    - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_text
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.cuustom_page_before_adoption
+  module:
+    - image
+    - link_class
+id: paragraph.cuustom_page_before_adoption.default
+targetEntityType: paragraph
+bundle: cuustom_page_before_adoption
+mode: default
+content:
+  field_ba_cats_image:
+    weight: 3
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_ba_cats_link:
+    weight: 5
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: manual
+      link_class_force: ''
+      link_class_select: ''
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_ba_cats_text:
+    weight: 4
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_ba_dogs_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_ba_dogs_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+      link_class_mode: manual
+      link_class_force: ''
+      link_class_select: ''
+    third_party_settings: {  }
+    type: link_class_field_widget
+    region: content
+  field_ba_dogs_text:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.home_featured_animal
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: false
+id: paragraph.home_featured_animal
+target_entity_type_id: paragraph
+target_bundle: home_featured_animal
+default_langcode: site_default
+language_alterable: false

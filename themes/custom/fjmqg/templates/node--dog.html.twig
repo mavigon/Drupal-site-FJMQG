@@ -82,12 +82,12 @@
       <div class="pet-info-wr">
         <h2>{{ label }}</h2>
         <ul class="foto-list">
-            {{ content.field_dog_photo }}
+          {{ content.field_dog_photo }}
         </ul>
         <div class="additional-info">
           <h2>{{ label }}</h2>
           <span class="label">{{'Gender'|t}}: {{ content.field_dog_gender }}</span>
-          <span class="label">{{'Age'|t}}: {{ content.field_dog_age }}</span>
+          <span class="label">{{'Age'|t}}: {{age}}</span>
           <span class="label">{{'Breed'|t}}: {{ content.field_dog_breed }}</span>
           <span class="label">{{'Size'|t}}: {{ content.field_dog_size }}</span>
           <span class="label">{{'Hair'|t}}: {{ content.field_dog_hair_type }}</span>
@@ -149,8 +149,8 @@
       <div class="help-pets-wr">
         <h2>title text</h2>
         <div class="help-pets-inner">
-          <a href="#" class="btn btn-donate">Adopt {{ label }}</a>
-          <a href="#" class="btn btn-donate">Donate</a>
+          <a href="#" class="btn btn-donate">{{'Adopt'|t}} {{ label }}</a>
+          <a href="#" class="btn btn-donate">{{'Sponsor for'|t}} {{ label }}</a>
         </div>
       </div>
     </section>

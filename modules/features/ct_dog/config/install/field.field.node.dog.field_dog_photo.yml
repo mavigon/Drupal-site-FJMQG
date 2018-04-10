@@ -5,7 +5,14 @@ dependencies:
     - field.storage.node.field_dog_photo
     - node.type.dog
   module:
+    - content_translation
     - image
+third_party_settings:
+  content_translation:
+    translation_sync:
+      alt: alt
+      title: title
+      file: '0'
 id: node.dog.field_dog_photo
 field_name: field_dog_photo
 entity_type: node
@@ -13,7 +20,7 @@ bundle: dog
 label: Photos
 description: ''
 required: true
-translatable: false
+translatable: true
 default_value: {  }
 default_value_callback: ''
 settings:

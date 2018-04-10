@@ -4,24 +4,64 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.dog.body
+    - field.field.node.dog.field_dog_age
+    - field.field.node.dog.field_dog_breed
+    - field.field.node.dog.field_dog_gender
+    - field.field.node.dog.field_dog_hair_type
+    - field.field.node.dog.field_dog_how_am_i
+    - field.field.node.dog.field_dog_i_like
+    - field.field.node.dog.field_dog_my_ideal_home
+    - field.field.node.dog.field_dog_photo
+    - field.field.node.dog.field_dog_size
+    - image.style.330x180
     - node.type.dog
   module:
-    - text
+    - datetime
+    - field_formatter_range
+    - image
     - user
 id: node.dog.teaser
 targetEntityType: node
 bundle: dog
 mode: teaser
 content:
-  body:
+  field_dog_age:
+    type: datetime_default
+    weight: 1
+    region: content
     label: hidden
-    type: text_summary_or_trimmed
-    weight: 101
     settings:
-      trim_length: 600
+      timezone_override: ''
+      format_type: html_date
     third_party_settings: {  }
+  field_dog_gender:
+    type: entity_reference_label
+    weight: 2
     region: content
-  links:
-    weight: 100
+    label: hidden
+    settings:
+      link: false
+    third_party_settings: {  }
+  field_dog_photo:
+    type: image
+    weight: 0
     region: content
-hidden: {  }
+    label: hidden
+    settings:
+      image_style: 330x180
+      image_link: ''
+    third_party_settings:
+      field_formatter_range:
+        limit: '1'
+        offset: '0'
+        reverse: 0
+hidden:
+  body: true
+  field_dog_breed: true
+  field_dog_hair_type: true
+  field_dog_how_am_i: true
+  field_dog_i_like: true
+  field_dog_my_ideal_home: true
+  field_dog_size: true
+  langcode: true
+  links: true

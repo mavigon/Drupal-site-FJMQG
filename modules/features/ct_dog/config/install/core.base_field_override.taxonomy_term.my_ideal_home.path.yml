@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.my_ideal_home
+  module:
+    - path
+id: taxonomy_term.my_ideal_home.path
+field_name: path
+entity_type: taxonomy_term
+bundle: my_ideal_home
+label: 'URL alias'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: path

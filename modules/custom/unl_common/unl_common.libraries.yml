@@ -1,0 +1,17 @@
+unl_common:
+ version: 1.0
+ js:
+  js/unl_common.js: {}
+ dependencies:
+    - core/jquery
+    - core/jquery.ui
+    
+unl_header:
+ version: 1.0
+ js:
+  js/unl_header.js: {}
+ dependencies:
+    - core/jquery
+    - core/jquery.ui
+    - core/drupal
+    - core/jquery.once

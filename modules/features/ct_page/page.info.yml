@@ -3,13 +3,15 @@ description: 'Provides Basic page content type and related configuration. Use <e
 type: module
 core: 8.x
 dependencies:
+  - content_translation
   - field
   - file
   - image
+  - language
   - node
   - paragraphs
   - path
   - rdf
   - text
   - user
-version: 8.x-1.02
+version: 8.x-1.04
