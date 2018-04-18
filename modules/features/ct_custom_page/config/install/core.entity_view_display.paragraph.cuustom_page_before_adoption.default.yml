@@ -8,7 +8,7 @@ dependencies:
     - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_image
     - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_link
     - field.field.paragraph.cuustom_page_before_adoption.field_ba_dogs_text
-    - image.style.990x460
+    - image.style.990x660
     - paragraphs.paragraphs_type.cuustom_page_before_adoption
   module:
     - image
@@ -22,7 +22,7 @@ content:
     weight: 3
     label: hidden
     settings:
-      image_style: 990x460
+      image_style: 990x660
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -51,7 +51,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: 990x460
+      image_style: 990x660
       image_link: ''
     third_party_settings: {  }
     type: image

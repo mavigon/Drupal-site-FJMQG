@@ -12,10 +12,11 @@ dependencies:
     - field.field.node.dog.field_dog_my_ideal_home
     - field.field.node.dog.field_dog_photo
     - field.field.node.dog.field_dog_size
-    - image.style.800x350
+    - image.style.800x600
     - node.type.dog
   module:
     - datetime
+    - field_formatter_range
     - image
     - text
     - user
@@ -92,9 +93,13 @@ content:
     weight: 102
     label: hidden
     settings:
-      image_style: 800x350
+      image_style: 800x600
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_range:
+        limit: '0'
+        offset: '0'
+        reverse: 0
     type: image
     region: content
   field_dog_size:

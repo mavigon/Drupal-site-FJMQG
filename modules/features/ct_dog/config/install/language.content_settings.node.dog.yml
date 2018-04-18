@@ -2,14 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - taxonomy.vocabulary.my_ideal_home
+    - node.type.dog
   module:
     - content_translation
 third_party_settings:
   content_translation:
     enabled: true
-id: taxonomy_term.my_ideal_home
-target_entity_type_id: taxonomy_term
-target_bundle: my_ideal_home
+id: node.dog
+target_entity_type_id: node
+target_bundle: dog
 default_langcode: site_default
 language_alterable: true

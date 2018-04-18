@@ -8,5 +8,5 @@
         <a class="btn btn-search" href="{{ path('entity.node.canonical', {'node': dog.id}) }}">Search</a>
       </div>
     </div>
-    <img src="{{ file_url(dog.field_dog_photo.entity.uri.value| image_style('990x460')) }}" alt="{{ dog.title.value }}">
+    <img src="{{ file_url(dog.field_dog_photo.entity.uri.value| image_style('990x660')) }}" alt="{{ dog.title.value }}">
 {% endfor %}
