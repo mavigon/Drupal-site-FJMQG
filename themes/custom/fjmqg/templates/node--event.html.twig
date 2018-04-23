@@ -68,17 +68,24 @@
 #}
 
 {{ attach_library('classy/node') }}
-
-<section class="simple-article">
-    <div class="simple-article__wr">
-       <h3>{{ label }}</h3>
-       {{ content }}
-    </div>
-    <nav class="aside-list-links">
-      <div class="aside-list-links__toogle">
-        <span></span>
-        <span></span>
+    
+<section class="event">
+  <div class="event-wr">
+    <div class="event-description">
+      <h2>{{ label }}</h2>
+      <div class="event-info info-date">
+          {{ node.field_event_date.value|date('j/m/Y') }}
       </div>
-      {{ drupal_menu('sidebar-menu') }}  
-    </nav>
+      <div class="event-info info-time">
+        {{ node.field_event_date.value|date('H:i') }} - {{ node.field_event_date.end_value|date('H:i') }}
+      </div>
+      <div class="event-info info-place">
+        {{ content.field_event_location }}
+      </div>
+      <p>
+        {{ content.body }}
+      </p>
+    </div>
+    {{ content.field_event_photo }}
+  </div>
 </section>

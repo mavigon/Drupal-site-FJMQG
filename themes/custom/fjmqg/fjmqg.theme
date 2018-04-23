@@ -30,3 +30,11 @@ function fjmqg_preprocess_region(&$variables) {
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $variables['lang'] = $language;
 }
+
+function fjmqg_preprocess_field(&$vars) {
+  if ($vars['element']['#field_name'] == 'field_event_photo') {
+    foreach($vars['items'] as $key => $item){
+      $vars['items'][ $key ]['content']['#item_attributes']['class'][] = 'event-img';
+    }
+  }
+}

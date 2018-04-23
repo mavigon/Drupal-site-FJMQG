@@ -5,16 +5,16 @@ dependencies:
     - field.storage.node.field_event_date
     - node.type.event
   module:
-    - datetime
+    - datetime_range
 id: node.event.field_event_date
 field_name: field_event_date
 entity_type: node
 bundle: event
 label: 'Event date'
 description: ''
-required: false
-translatable: true
+required: true
+translatable: false
 default_value: {  }
 default_value_callback: ''
 settings: {  }
-field_type: datetime
+field_type: daterange

@@ -4,10 +4,11 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_location
     - field.field.node.event.field_event_photo
     - node.type.event
   module:
-    - datetime
+    - datetime_range
     - image
     - text
     - user
@@ -19,22 +20,31 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 101
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   field_event_date:
-    weight: 102
-    label: above
+    weight: 5
+    label: hidden
     settings:
+      separator: '-'
       format_type: medium
       timezone_override: ''
     third_party_settings: {  }
-    type: datetime_default
+    type: daterange_default
+    region: content
+  field_event_location:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
   field_event_photo:
-    weight: 103
-    label: above
+    weight: 3
+    label: hidden
     settings:
       image_style: ''
       image_link: ''
@@ -42,7 +52,9 @@ content:
     type: image
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

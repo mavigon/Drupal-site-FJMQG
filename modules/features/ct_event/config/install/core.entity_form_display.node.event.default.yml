@@ -4,11 +4,12 @@ dependencies:
   config:
     - field.field.node.event.body
     - field.field.node.event.field_event_date
+    - field.field.node.event.field_event_location
     - field.field.node.event.field_event_photo
     - image.style.thumbnail
     - node.type.event
   module:
-    - datetime
+    - datetime_range
     - image
     - path
     - text
@@ -33,10 +34,18 @@ content:
     settings: {  }
     third_party_settings: {  }
   field_event_date:
-    weight: 122
+    weight: 125
     settings: {  }
     third_party_settings: {  }
-    type: datetime_default
+    type: daterange_default
+    region: content
+  field_event_location:
+    weight: 124
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
   field_event_photo:
     weight: 123
@@ -88,6 +97,9 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
   uid:
     type: entity_reference_autocomplete
     weight: 5
