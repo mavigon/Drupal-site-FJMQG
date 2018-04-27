@@ -3721,6 +3721,15 @@ img.fnone {
     display: none;
   }
 
+  .additional-info {
+    margin: 0 auto 0 0;
+    text-align: left;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .additional-info h2 {
     display: block;
     text-align: left;
@@ -3741,12 +3750,6 @@ img.fnone {
 
   .pet-info-wr .foto-list {
     max-width: 800px;
-  }
-
-  .additional-info {
-    margin: 0 auto 0 0;
-    text-align: left;
-    padding-left: 60px;
   }
 
   .tags-block {
@@ -3843,6 +3846,10 @@ img.fnone {
 
   .list-links {
     display: block !important;
+  }
+
+  .event-description {
+    max-width: 65%;
   }
 }
 
