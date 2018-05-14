@@ -1,0 +1,47 @@
+<?php
+
+/**
+ * @file
+ * Contains unl_contact.module.
+ */
+
+// Constant to contain "ContactUs" form id.
+const UNL_CONTACT_FORM_ID = 'unl_contact_form';
+
+/**
+ * Implements hook_mail().
+ */
+function unl_contact_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'unl_contact':
+      $message['from'] = $params['contact_email'];
+      $message['subject'] = t('@title', array('@title' => $params['title']), $options);
+      $message['body'][] = $params['message'];
+      break;
+  }
+}
+
+/**
+ * @param $variables
+ */
+function unl_contact_preprocess_page__contact(&$variables) {
+  $form = \Drupal::formBuilder()->getForm('Drupal\unl_contact\Form\ContactForm');
+
+  $variables['phone'] = 'phone is temporarily absent';
+  if(!empty(\Drupal::config('unl_contact.settings')->get('unl_contact.contact_phone'))) {
+    $variables['phone'] = \Drupal::config('unl_contact.settings')
+      ->get('unl_contact.contact_phone');
+  }
+
+  $variables['email'] = \Drupal::config('system.site')->get('mail');
+  if(!empty(\Drupal::config('unl_contact.settings')->get('unl_contact.contact_email'))) {
+    $variables['email'] = \Drupal::config('unl_contact.settings')
+      ->get('unl_contact.contact_email');
+  }
+  $variables['show_map'] = \Drupal::config('unl_contact.settings')->get('unl_contact.show_map');
+
+  $variables['form'] = $form;
+}
