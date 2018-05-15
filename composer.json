@@ -53,11 +53,6 @@
             "themes/custom/{$name}": ["type:drupal-custom-theme"]
         }
     },
-    "patches": {
-        "drupal/smtp": {
-            "Fix PHPMailer bug" : "invalid_placeholder_from-2860996-3.patch"
-        }
-    },
     "autoload": {
         "psr-4": {
             "Drupal\\Core\\Composer\\": "core/lib/Drupal/Core/Composer"
