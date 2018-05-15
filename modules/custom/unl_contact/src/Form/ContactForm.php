@@ -108,8 +108,8 @@ class ContactForm extends FormBase {
     $params['contact_email'] = $email;
 
     $to = \Drupal::config('system.site')->get('mail');
-    if(!empty(\Drupal::config('unl_contact.settings')->get('unl_contact.contact_phone'))) {
-      $to = \Drupal::config('unl_contact.settings')->get('unl_contact.contact_phone');
+    if(!empty(\Drupal::config('unl_contact.settings')->get('unl_contact.contact_email'))) {
+      $to = \Drupal::config('unl_contact.settings')->get('unl_contact.contact_email');
     }
 
     $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, $send);
