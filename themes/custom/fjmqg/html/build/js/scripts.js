@@ -4522,7 +4522,47 @@ $.fn.msDropdown = $.fn.msDropDown; //make a copy
     if($('#toolbar-administration').length) {
       header.css('padding-top', '80px');
     }
+
+    //change height contact-info block
     
+    var contactInfo = $('.contact-info');
+    var headerHeight = $('.main-header').height();
+    var footerHeight = $('.main-footer').height();
+    var screenHeight = $(document).height();
+    // 8 it's border height in header (4px) and footer (4px)
+    var heightBlock = screenHeight - headerHeight - footerHeight - 8;
+
+    function changeHeight(height) {
+      contactInfo.css('height', height + 'px');
+    }
+
+    if($(window).width() >= 750) {
+      changeHeight(heightBlock);
+    }
+
+    $(window).resize(function () {
+      if($(window).width() >= 750) {
+        screenHeight = $(document).height();
+        headerHeight = $('.main-header').height();
+        footerHeight = $('.main-footer').height();
+        heightBlock = screenHeight - headerHeight - footerHeight - 8;
+        changeHeight(heightBlock);
+      } else {
+        contactInfo.css('height', 'auto');
+      }
+    });
+
+    //google map
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 8
+      });
+    }
+
+    initMap();
+
   });
 })(jQuery);
 

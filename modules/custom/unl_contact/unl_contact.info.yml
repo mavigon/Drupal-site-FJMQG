@@ -1,0 +1,8 @@
+name: UNL Contact Module
+type: module
+description: Module create and configure contact form
+core: 8.x
+package: 'UNL'
+version: 1.0
+dependencies:
+configure: unl_contact.config

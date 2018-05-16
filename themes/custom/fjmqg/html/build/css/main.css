@@ -3390,6 +3390,133 @@ img.fnone {
   margin: 0 auto;
 }
 
+.contact-info {
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #c3cffe;
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+}
+
+.contact-info .map {
+  margin: 0 auto;
+  max-width: 400px;
+  min-height: 250px;
+}
+
+.contact-detail,
+.contact-location {
+  text-align: center;
+  color: #1623aa;
+}
+
+.contact-detail h2,
+.contact-location h2 {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.contact-detail {
+  margin-bottom: 40px;
+}
+
+.contact-detail a {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.contact-form {
+  margin: 0 auto;
+  padding: 20px;
+  color: #1623aa;
+}
+
+.contact-form h2 {
+  font-weight: 500;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.contact-form p {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.contact-us-form {
+  border: 3px solid #c3d1fd;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.contact-us-form .form-item {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.contact-us-form .form-item:nth-of-type(3) {
+  margin-bottom: 50px;
+}
+
+.contact-us-form .form-item .title {
+  width: 30%;
+  background-color: #c3cffe;
+  text-align: center;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.contact-us-form .form-item input,
+.contact-us-form .form-item .title {
+  height: 25px;
+  line-height: 25px;
+}
+
+.contact-us-form .form-item input,
+.contact-us-form .form-item textarea {
+  border: 2px solid #c3cffe;
+  width: 70%;
+  padding: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.contact-us-form .form-item textarea {
+  width: 100%;
+  resize: vertical;
+  min-height: 50px;
+  border-bottom-left-radius: 5px;
+}
+
+.contact-us-form .form-item .message {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateY(-100%);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 0;
+}
+
+.contact-us-form .btn {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  border: none;
+  width: 140px;
+  height: 100px;
+  border-radius: 0;
+  background-color: transparent;
+  color: black;
+  background-image: url("../img/SendButton.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
 @media all and (min-width: 750px) {
   .main-header-social {
     max-width: 330px;
@@ -3537,6 +3664,28 @@ img.fnone {
     max-height: 400px;
     max-width: 350px;
     margin: 0;
+  }
+
+  .contact-us-form {
+    padding-top: 50px;
+  }
+
+  .contact-wr {
+    display: flex;
+  }
+
+  .contact-wr h2 {
+    font-size: 20px;
+  }
+
+  .contact-info {
+    width: 40%;
+    padding-top: 80px;
+    border-right: 4px solid #1623aa;
+  }
+
+  .contact-form {
+    width: 60%;
   }
 }
 
@@ -3721,6 +3870,15 @@ img.fnone {
     display: none;
   }
 
+  .additional-info {
+    margin: 0 auto 0 0;
+    text-align: left;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .additional-info h2 {
     display: block;
     text-align: left;
@@ -3741,12 +3899,6 @@ img.fnone {
 
   .pet-info-wr .foto-list {
     max-width: 800px;
-  }
-
-  .additional-info {
-    margin: 0 auto 0 0;
-    text-align: left;
-    padding-left: 60px;
   }
 
   .tags-block {
@@ -3844,6 +3996,43 @@ img.fnone {
   .list-links {
     display: block !important;
   }
+
+  .event-description {
+    max-width: 65%;
+  }
+
+  .contact-info {
+    width: 30%;
+  }
+
+  .contact-info .map {
+    min-height: 300px;
+  }
+
+  .contact-form {
+    width: 70%;
+  }
+
+  .contact-us-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .contact-us-form .form-item,
+  .contact-us-form h2,
+  .contact-us-form p {
+    width: 100%;
+  }
+
+  .contact-us-form .form-item:nth-of-type(1),
+  .contact-us-form .form-item:nth-of-type(2) {
+    width: 48%;
+  }
+
+  .contact-us-form .form-item textarea {
+    min-height: 250px;
+  }
 }
 
 @media all and (min-width: 1550px) {
@@ -3905,6 +4094,11 @@ img.fnone {
     max-height: 600px;
     max-width: 500px;
     margin: 0;
+  }
+
+  .contact-wr {
+    max-width: 1520px;
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
