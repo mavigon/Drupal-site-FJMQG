@@ -21,9 +21,3 @@ order-header-js-command:
   header: true
   js:
     header.js: {}
-
-ajax_insert:
-  js:
-    js/insert-ajax.js: {}
-  dependencies:
-    - core/drupal.ajax

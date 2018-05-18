@@ -16,19 +16,6 @@ class AjaxTest extends JavascriptTestBase {
    */
   public static $modules = ['ajax_test'];
 
-  /**
-   * Wrap HTML with an AJAX target element.
-   *
-   * @param string $html
-   *   The HTML to wrap.
-   *
-   * @return string
-   *   The HTML wrapped in the an AJAX target element.
-   */
-  protected function wrapAjaxTarget($html) {
-    return 'data-drupal-ajax-target="">' . $html . '</';
-  }
-
   public function testAjaxWithAdminRoute() {
     \Drupal::service('theme_installer')->install(['stable', 'seven']);
     $theme_config = \Drupal::configFactory()->getEditable('system.theme');
@@ -93,99 +80,6 @@ class AjaxTest extends JavascriptTestBase {
     $assert->assertWaitOnAjaxRequest();
     $libraries = $session->evaluateScript('drupalSettings.ajaxPageState.libraries');
     $this->assertNotContains($fake_library, $libraries);
-  }
-
-  /**
-   * Tests that various AJAX responses with DOM elements are correctly inserted.
-   *
-   * After inserting DOM elements, Drupal JavaScript behaviors should be
-   * reattached and all top-level elements of type Node.ELEMENT_NODE need to be
-   * part of the context.
-   */
-  public function testInsert() {
-    $assert = $this->assertSession();
-    $test_cases = [
-      // Test that no additional wrapper is added when inserting already wrapped
-      // response data and all top-level node elements (context) are processed
-      // correctly.
-      [
-        'render_type' => 'pre-wrapped',
-        'expected' => '<div class="pre-wrapped processed">pre-wrapped<script> var test;</script></div>',
-      ],
-      // Test that no additional empty leading div is added when the return
-      // value had a leading space and all top-level node elements (context) are
-      // processed correctly.
-      [
-        'render_type' => 'pre-wrapped-whitespace',
-        'expected' => '<div class="pre-wrapped-whitespace processed">pre-wrapped-whitespace</div>',
-      ],
-      // Test that not wrapped response data (text node) is inserted wrapped and
-      // all top-level node elements (context) are processed correctly.
-      [
-        'render_type' => 'not-wrapped',
-        'expected' => '<span class="processed">not-wrapped</span>',
-      ],
-      // Test that top-level comments (which are not lead by text nodes) are
-      // inserted without wrapper.
-      [
-        'render_type' => 'comment-not-wrapped',
-        'expected' => '<!-- COMMENT --><div class="comment-not-wrapped processed">comment-not-wrapped</div>',
-      ],
-      // Test that wrappend and not-wrapped response data is inserted correctly
-      // and all top-level node elements (context) are processed correctly.
-      [
-        'method' => 'html',
-        'render_type' => 'mixed',
-        'expected' => '<div class="processed"> foo <!-- COMMENT -->  foo bar<div class="a class"><p>some string</p></div> additional not wrapped strings, <!-- ANOTHER COMMENT --> <p>final string</p></div>',
-      ],
-      // Test that when the response has only top-level node elements, they
-      // are processed properly without extra wrapping.
-      [
-        'method' => 'html',
-        'render_type' => 'top-level-only',
-        'expected' => '<div class="processed">element #1</div><div class="processed">element #2</div>',
-      ],
-      // Test that whitespaces at start or end don't wrap the response when
-      // there are multiple top-level nodes.
-      [
-        'method' => 'html',
-        'render_type' => 'top-level-only-pre-whitespace',
-        'expected' => '<div class="processed">element #1</div><div class="processed">element #2</div>',
-      ],
-      // Test that when there are whitespaces between top-level nodes, the
-      // response is wrapped.
-      [
-        'method' => 'html',
-        'render_type' => 'top-level-only-middle-whitespace',
-        'expected' => '<div class="processed"><div>element #1</div> <div>element #2</div></div>',
-      ],
-      // Test that inline response data.
-      [
-        'render_type' => 'inline',
-        'expected' => '<span class="processed">inline <div>BLOCK LEVEL<script> var test;</script></div></span>',
-      ],
-      // Test that empty response data.
-      [
-        'render_type' => 'empty',
-        'expected' => '<span class="processed"></span>',
-      ],
-    ];
-
-    $this->drupalGet('ajax-test/insert');
-    foreach ($test_cases as $test_case) {
-      $this->clickLink("Link html {$test_case['render_type']}");
-      $assert->assertWaitOnAjaxRequest();
-      // Extra span added by a second prepend command on the ajax requests.
-      $assert->responseContains($this->wrapAjaxTarget($test_case['expected']));
-    }
-
-    foreach ($test_cases as $test_case) {
-      $this->drupalGet('ajax-test/insert');
-      $this->clickLink("Link replaceWith {$test_case['render_type']}");
-      $assert->assertWaitOnAjaxRequest();
-      $assert->responseContains($test_case['expected']);
-      $assert->responseNotContains($this->wrapAjaxTarget($test_case['expected']));
-    }
   }
 
 }

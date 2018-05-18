@@ -5,43 +5,58 @@
  * Contains unl_contact.module.
  */
 
-// Constant to contain "ContactUs" form id.
-const UNL_CONTACT_FORM_ID = 'unl_contact_form';
+use Drupal\Core\Form\ConfigFormBase;
 
 /**
- * Implements hook_mail().
+ * Implements hook_form_alter().
  */
-function unl_contact_mail($key, &$message, $params) {
-  $options = array(
-    'langcode' => $message['langcode'],
-  );
-  switch ($key) {
-    case 'unl_contact':
-      $message['from'] = $params['contact_email'];
-      $message['subject'] = t('@title', array('@title' => $params['title']), $options);
-      $message['body'][] = $params['message'];
-      break;
+function unl_contact_form_alter(&$form, $form_state, $form_id) {
+
+  // Look for any form provided by the contact module.
+  // If you want to target a specific form you'll use the whole form ID
+  // (e.g. Website feedback = 'contact_message_feedback_form').
+  if (strpos($form_id, 'contact_message_') !== FALSE) {
+     
+    $config = \Drupal::config('unl_contact.settings');
+    $show_map = \Drupal::config('unl_contact.settings')->get('unl_contact.show_map');
+    $prefix = '<section class="contact-page">
+        <div class="contact-wr">
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <h2>'. t('Our contact details') .'</h2>
+                    <a href="tel:' . $config->get('unl_contact.contact_phone') . '">'
+                    . $config->get('unl_contact.contact_phone') . '</a>
+                    <a href="mailto:' . $config->get('unl_contact.contact_email') . '">'
+                    . $config->get('unl_contact.contact_email') . '</a>
+                </div>';
+    if($show_map){
+      $prefix .= '<div class="contact-location">
+          <h2>Where are we?</h2>
+          <p>adress adress adress adress</p>
+          <div class="map" id="map"></div>
+      </div>';
+    }
+
+    $prefix .='</div><div class="contact-form">';
+    $form['#prefix'] = $prefix;
+    $form['#suffix'] = '</div></div>
+    </section>';
+    $form['actions']['preview']['#access'] = FALSE;
+
+    $form['#attributes']['class'][] = 'contact-us-form';
+    $form['title'] = [
+      '#markup' => '<h2>' . t('Contact us') . '</h2>',
+      '#weight' => -10,
+    ];
+    $form['term_info'] = [
+      '#markup' => '<p class="term-info">' . t('By clicking Send you accept our terms and conditions') . '</p>',
+      '#weight' => 10,
+    ];
+    $form['name']['#attributes']['class'][] = 'form-item';
+    $form['field_phone']['#attributes']['class'][] = 'form-item';
+    $form['mail']['#attributes']['class'][] = 'form-item';
+    $form['message']['#attributes']['class'][] = 'form-item';
+    $form['actions']['submit']['#attributes']['class'][] = 'btn';
+    $form['actions']['submit']['#value'] = '';
   }
-}
-
-/**
- * @param $variables
- */
-function unl_contact_preprocess_page__contact(&$variables) {
-  $form = \Drupal::formBuilder()->getForm('Drupal\unl_contact\Form\ContactForm');
-
-  $variables['phone'] = 'phone is temporarily absent';
-  if(!empty(\Drupal::config('unl_contact.settings')->get('unl_contact.contact_phone'))) {
-    $variables['phone'] = \Drupal::config('unl_contact.settings')
-      ->get('unl_contact.contact_phone');
-  }
-
-  $variables['email'] = \Drupal::config('system.site')->get('mail');
-  if(!empty(\Drupal::config('unl_contact.settings')->get('unl_contact.contact_email'))) {
-    $variables['email'] = \Drupal::config('unl_contact.settings')
-      ->get('unl_contact.contact_email');
-  }
-  $variables['show_map'] = \Drupal::config('unl_contact.settings')->get('unl_contact.show_map');
-
-  $variables['form'] = $form;
 }

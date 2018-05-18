@@ -1,11 +1,3 @@
-unl_contact.form:
-  path: '/contact'
-  defaults:
-    _title: ''
-    _form: '\Drupal\unl_contact\Form\ContactForm'
-  requirements:
-    _permission: 'access content'
-
 unl_contact.config:
   path: '/admin/config/contact_configuration'
   defaults:
