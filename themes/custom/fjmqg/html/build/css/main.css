@@ -3425,6 +3425,8 @@ img.fnone {
 .contact-detail a {
   display: block;
   margin-bottom: 15px;
+  color: #1306ee;
+  text-decoration: underline;
 }
 
 .contact-form {
@@ -3455,6 +3457,7 @@ img.fnone {
   display: flex;
   margin-bottom: 20px;
   position: relative;
+  margin-top: 0;
 }
 
 .contact-us-form .form-item:nth-of-type(3) {
@@ -3482,6 +3485,7 @@ img.fnone {
   padding: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  margin-top: 0;
 }
 
 .contact-us-form .form-item textarea {
@@ -3511,6 +3515,15 @@ img.fnone {
   border-radius: 0;
   background-color: transparent;
   color: black;
+  background-image: url("../img/SendButton.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.input .form-submit:hover,
+.input .form-submit:focus {
+  background: inherit;
   background-image: url("../img/SendButton.png");
   background-size: cover;
   background-position: center center;
