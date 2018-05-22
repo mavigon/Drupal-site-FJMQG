@@ -3521,8 +3521,8 @@ img.fnone {
   background-repeat: no-repeat;
 }
 
-.input .form-submit:hover,
-.input .form-submit:focus {
+input .form-submit:hover,
+input .form-submit:focus {
   background: inherit;
   background-image: url("../img/SendButton.png");
   background-size: cover;
