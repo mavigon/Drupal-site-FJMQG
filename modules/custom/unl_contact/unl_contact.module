@@ -11,7 +11,6 @@ use Drupal\Core\Form\ConfigFormBase;
  * Implements hook_form_alter().
  */
 function unl_contact_form_alter(&$form, $form_state, $form_id) {
-
   // Look for any form provided by the contact module.
   // If you want to target a specific form you'll use the whole form ID
   // (e.g. Website feedback = 'contact_message_feedback_form').
@@ -42,6 +41,11 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
     $form['#suffix'] = '</div></div>
     </section>';
     $form['actions']['preview']['#access'] = FALSE;
+    foreach($form['#attributes']['class'] as $key => $form_class) {
+      if($form_class == 'contact-form'){
+        unset($form['#attributes']['class'][$key]);
+      }
+    }
 
     $form['#attributes']['class'][] = 'contact-us-form';
     $form['title'] = [
@@ -53,6 +57,10 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
       '#weight' => 10,
     ];
     $form['name']['#attributes']['class'][] = 'form-item';
+    $form['name']['#title'] = t('Name');
+    $form['mail']['#title'] = t('Email address');
+//    kint($form['name']);
+//    die();
     $form['field_phone']['#attributes']['class'][] = 'form-item';
     $form['mail']['#attributes']['class'][] = 'form-item';
     $form['message']['#attributes']['class'][] = 'form-item';

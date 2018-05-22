@@ -38,3 +38,26 @@ function fjmqg_preprocess_field(&$vars) {
     }
   }
 }
+
+/**
+ * Implements hook_theme_suggestions_container_alter().
+ */
+function fjmqg_theme_suggestions_container_alter(array &$suggestions, array $variables) {
+  $suggestions = [];
+  if (isset($variables['element']['#form_element_type'])) {
+    $suggestions[] = 'container__' . $variables['element']['#form_element_type'];
+  }
+  if (isset($variables['element']['#form_id'])) {
+    $suggestions[] = 'container__' . $variables['element']['#form_id'];
+//    echo '<pre>';
+//    var_dump($variables['element']);
+//    die();
+  }
+  if (isset($variables['element']['#form_element_type']) && isset($variables['element']['#form_id'])) {
+    $suggestions[] = 'container__' . $variables['element']['#form_id'] . '__' . $variables['element']['#form_element_type'];
+  }
+  if (isset($variables['element']['#parents'][0]) && isset($variables['element']['#form_id'])) {
+    $suggestions[] = 'container__' . $variables['element']['#form_id'] . '__' . $variables['element']['#parents'][0];
+  }
+ 
+}
