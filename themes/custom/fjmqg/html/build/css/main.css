@@ -2790,11 +2790,12 @@ img.fnone {
   position: relative;
 }
 
-.special-animal-inner img {
+.special-animal-inner .bg-img {
   width: 100%;
-  height: auto;
-  max-height: 460px;
-  min-height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
 }
 
 .add-info {
@@ -2844,12 +2845,13 @@ img.fnone {
   color: #ffffff;
 }
 
-.coming-events-inner img {
+.coming-events-inner .bg-img {
   display: none;
   width: 100%;
-  height: auto;
-  max-height: 460px;
-  min-height: 200px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
 }
 
 .events-info {
@@ -3565,6 +3567,11 @@ img.fnone {
     font-size: 20px;
   }
 
+  .special-animal-inner .bg-img,
+  .coming-events-inner .bg-img {
+    min-height: 460px;
+  }
+
   .pet-info h2 {
     font-size: 32px;
   }
@@ -3817,11 +3824,9 @@ img.fnone {
     display: flex;
   }
 
-  .special-animal-inner img {
+  .special-animal-inner .bg-img {
     width: 65%;
     height: auto;
-    max-height: 460px;
-    min-height: 200px;
   }
 
   .add-info {
@@ -3845,7 +3850,7 @@ img.fnone {
     display: flex;
   }
 
-  .coming-events-inner img {
+  .coming-events-inner .bg-img {
     display: block;
     width: 65%;
   }
