@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic page type'
+vid: basic_page_type
+description: 'Type of structure of the basic page'
+hierarchy: 0
+weight: 0
