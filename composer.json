@@ -52,6 +52,11 @@
             "drush/contrib/{$name}": ["type:drupal-drush"],
             "modules/custom/{$name}": ["type:drupal-custom-module"],
             "themes/custom/{$name}": ["type:drupal-custom-theme"]
+        },
+        "patches": {
+            "drupal/core": {
+                "fix views range": "patches/2786577-270_0.patch"
+            }
         }
     },
     "autoload": {

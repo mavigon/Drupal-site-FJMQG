@@ -6,6 +6,7 @@ dependencies:
     - node.type.event
   module:
     - datetime
+    - datetime_range
     - node
     - user
 id: events_home_page
@@ -278,7 +279,7 @@ display:
           value:
             min: ''
             max: ''
-            value: '+1 minute'
+            value: '-1 day'
             type: offset
           group: 1
           exposed: false
@@ -294,6 +295,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''
