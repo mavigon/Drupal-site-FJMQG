@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.home_featured_animal.field_home_featured_animal
+    - field.field.paragraph.home_featured_animal.field_text_before_title
     - paragraphs.paragraphs_type.home_featured_animal
 id: paragraph.home_featured_animal.default
 targetEntityType: paragraph
@@ -17,6 +18,14 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
+    region: content
+  field_text_before_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
     region: content
 hidden:
   created: true

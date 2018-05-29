@@ -18,4 +18,4 @@ dependencies:
   - text
   - user
   - views
-version: 8.x-1.08
+version: 8.x-1.09

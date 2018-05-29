@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.home_featured_animal.field_home_featured_animal
+    - field.field.paragraph.home_featured_animal.field_text_before_title
     - paragraphs.paragraphs_type.home_featured_animal
 id: paragraph.home_featured_animal.default
 targetEntityType: paragraph
@@ -16,5 +17,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
+  field_text_before_title:
+    weight: 1
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }
