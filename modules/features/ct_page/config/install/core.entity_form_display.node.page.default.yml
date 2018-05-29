@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.node.page.body
+    - field.field.node.page.field_basic_page_type
     - field.field.node.page.field_page_image
     - image.style.thumbnail
     - node.type.page
@@ -30,6 +31,12 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_basic_page_type:
+    weight: 122
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
   field_page_image:
     weight: 121
     settings:
@@ -79,6 +86,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete

@@ -68,7 +68,7 @@
 #}
 
 {{ attach_library('classy/node') }}
-
+{% set type = node.field_basic_page_type.entity.name.value %}
 <section class="simple-article">
     <div class="simple-article__wr">
        <h3>{{ label }}</h3>
@@ -79,6 +79,10 @@
         <span></span>
         <span></span>
       </div>
-      {{ drupal_menu('sidebar-menu') }}  
+        {% if type == 'About us'%}
+            {{ drupal_menu('about-us') }}
+        {% elseif type == 'Help us'%}
+            {{ drupal_menu('help-us') }}
+        {% endif %}
     </nav>
 </section>

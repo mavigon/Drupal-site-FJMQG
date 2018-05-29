@@ -8,6 +8,8 @@ dependencies:
 third_party_settings:
   content_translation:
     enabled: false
+    bundle_settings:
+      untranslatable_fields_hide: '0'
 id: paragraph.cuustom_page_before_adoption
 target_entity_type_id: paragraph
 target_bundle: cuustom_page_before_adoption
