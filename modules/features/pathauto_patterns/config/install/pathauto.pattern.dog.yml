@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: dog
+label: Dog
+type: 'canonical_entities:node'
+pattern: 'dog-[node:title]'
+selection_criteria:
+  03a37ccd-5774-4db1-8ccf-0ca132c82c70:
+    id: node_type
+    bundles:
+      dog: dog
+    negate: false
+    context_mapping:
+      node: node
+    uuid: 03a37ccd-5774-4db1-8ccf-0ca132c82c70
+selection_logic: and
+weight: -5
+relationships: {  }
