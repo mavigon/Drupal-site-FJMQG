@@ -8,3 +8,16 @@ function unl_common_preprocess_views_view(&$vars) {
     $vars['#attached']['library'][] = 'unl_common/unl_common';
   }
 }
+
+function unl_common_preprocess_field__paragraph__field_home_featured_animal(&$vars) {
+  $node = \Drupal::request()->attributes->get('node');
+  $paragraph = $node->field_home_page_paragraphs->getValue();
+
+  foreach ( $paragraph as $element ) {
+    $entity = \Drupal\paragraphs\Entity\Paragraph::load( $element['target_id'] );
+    if (!empty($entity) && !empty($entity->field_text_before_title)) {
+      $field_value = $entity->field_text_before_title->getValue();
+    }
+  }
+  $vars['before_title'] = $field_value[0]['value'];
+}

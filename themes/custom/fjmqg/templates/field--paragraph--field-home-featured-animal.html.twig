@@ -1,7 +1,7 @@
 {% for item in items %}
     {% set dog = item.content['#options'].entity %}
     <div class="add-info">
-      <h3>some text</h3>
+      <h3>{{ before_title }}</h3>
       <h2>{{ dog.title.value }}</h2>
       <p>{{dog.get('body').summary}}</p>
       <div class="btn-container">
