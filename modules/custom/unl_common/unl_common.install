@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the unl_common module.
+ */
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Update function for add taxonomy terms to basic_page_type vocabulary
+ */
+function unl_common_update_8001() {
+
+  $list_of_terms = array(
+    'About us',
+    'Help us',
+    'No sidebar',
+  );
+
+  foreach ($list_of_terms as $name) {
+    Term::create([
+      'name' => $name,
+      'vid' => 'basic_page_type',
+    ])->save();
+  }
+}
