@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_page_type
+    - node.type.page
+    - taxonomy.vocabulary.basic_page_type
+  content:
+    - 'taxonomy_term:basic_page_type:ff70160a-d7e5-4d8b-af73-42a4ed9db759'
+id: node.page.field_basic_page_type
+field_name: field_basic_page_type
+entity_type: node
+bundle: page
+label: 'basic page type'
+description: 'Select structure of the basic page'
+required: true
+translatable: false
+default_value:
+  -
+    target_uuid: ff70160a-d7e5-4d8b-af73-42a4ed9db759
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      basic_page_type: basic_page_type
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
