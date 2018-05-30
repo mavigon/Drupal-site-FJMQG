@@ -10,15 +10,19 @@ function unl_common_preprocess_views_view(&$vars) {
 }
 
 function unl_common_preprocess_field__paragraph__field_home_featured_animal(&$vars) {
+  $lang_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
   $node = \Drupal::request()->attributes->get('node');
   if (!empty($node->field_home_page_paragraphs)) {
     $paragraph = $node->field_home_page_paragraphs->getValue();
     $vars['before_title'] = '';
     foreach ( $paragraph as $element ) {
       $entity = \Drupal\paragraphs\Entity\Paragraph::load( $element['target_id'] );
-      if (!empty($entity) && !empty($entity->field_text_before_title)) {
-        $field_value = $entity->field_text_before_title->getValue();
-        $vars['before_title'] = $field_value[0]['value'];
+      if ($entity->hasTranslation($lang_code)) {
+        $translation = $entity->getTranslation($lang_code);
+      }
+      $value = $translation->get('field_text_before_title')->getValue();
+      if (!empty($value[0]['value'])) {
+        $vars['before_title'] = $value[0]['value'];
       }
     }
   }
