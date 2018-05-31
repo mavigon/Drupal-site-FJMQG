@@ -8,12 +8,12 @@
               {% if (lang != 'en') %}
                   <option data-href="{{ url('<front>') }}" data-lang="{{ lang }}" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-{{ lang }}" data-title=""></option>
               {% else %}
-                  <option data-href="{{ url('<front>') }}" data-lang="gb" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-gb" data-title=""></option>
+                  <option data-href="{{ url('<front>') }}" data-lang="en" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-gb" data-title=""></option>
               {% endif %}
               {% for country in list_countries %}
                   {% set id = country.getId %}
                   {% if ((id == 'en') and (lang != 'en')) %}
-                      <option data-href="{{ url('<front>') }}" data-lang="gb" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-gb" data-title="England"></option>
+                      <option data-href="{{ url('<front>') }}" data-lang="en" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-gb" data-title="England"></option>
                   {% elseif lang != id %}
                       <option data-href="{{ url('<front>') }}" data-lang="{{ id }}" data-image="/{{ directory }}/html/img/msdropdown/icons/blank.gif" data-imagecss="flag flag-{{ id }}" data-title="{{ country.name }}"></option>
                   {% endif %}
