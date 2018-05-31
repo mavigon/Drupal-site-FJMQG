@@ -20,9 +20,9 @@ function unl_common_preprocess_field__paragraph__field_home_featured_animal(&$va
       if ($entity->hasTranslation($lang_code)) {
         $translation = $entity->getTranslation($lang_code);
         $value = $translation->field_text_before_title->value;
-
         if (!empty($value)) {
           $vars['before_title'] = $value;
+          break;
         }
       }
     }
