@@ -19,9 +19,10 @@ function unl_common_preprocess_field__paragraph__field_home_featured_animal(&$va
       $entity = \Drupal\paragraphs\Entity\Paragraph::load( $element['target_id'] );
       if ($entity->hasTranslation($lang_code)) {
         $translation = $entity->getTranslation($lang_code);
-        $value = $translation->get('field_text_before_title')->getValue();
-        if (!empty($value[0]['value'])) {
-          $vars['before_title'] = $value[0]['value'];
+        $value = $translation->field_text_before_title->value;
+        if (!empty($value)) {
+          $vars['before_title'] = $value;
+          break;
         }
       }
     }
