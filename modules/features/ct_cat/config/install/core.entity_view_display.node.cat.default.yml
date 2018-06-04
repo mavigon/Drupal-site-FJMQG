@@ -1,0 +1,113 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.cat.field_cat_age
+    - field.field.node.cat.field_cat_breed
+    - field.field.node.cat.field_cat_gender
+    - field.field.node.cat.field_cat_hair_type
+    - field.field.node.cat.field_cat_how_am_i_
+    - field.field.node.cat.field_cat_i_like
+    - field.field.node.cat.field_cat_my_ideal_home
+    - field.field.node.cat.field_cat_my_story
+    - field.field.node.cat.field_cat_photos
+    - field.field.node.cat.field_cat_size
+    - node.type.cat
+  module:
+    - datetime
+    - image
+    - text
+    - user
+id: node.cat.default
+targetEntityType: node
+bundle: cat
+mode: default
+content:
+  field_cat_age:
+    weight: 4
+    label: hidden
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_cat_breed:
+    weight: 5
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cat_gender:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cat_hair_type:
+    weight: 7
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cat_how_am_i_:
+    weight: 8
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cat_i_like:
+    weight: 9
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cat_my_ideal_home:
+    weight: 10
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_cat_my_story:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_cat_photos:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_cat_size:
+    weight: 6
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  langcode: true

@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.cat_breed
+  module:
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+id: taxonomy_term.cat_breed
+target_entity_type_id: taxonomy_term
+target_bundle: cat_breed
+default_langcode: site_default
+language_alterable: true

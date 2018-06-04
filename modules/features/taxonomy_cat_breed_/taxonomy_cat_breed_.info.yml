@@ -1,0 +1,8 @@
+name: 'Taxonomy Cat Breed '
+type: module
+core: 8.x
+dependencies:
+  - content_translation
+  - language
+  - taxonomy
+version: 8.x-1.0

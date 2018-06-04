@@ -7,6 +7,10 @@ function unl_common_preprocess_views_view(&$vars) {
   if ($vars['view_array']['#name'] == 'dogs_for_adoption') {
     $vars['#attached']['library'][] = 'unl_common/unl_common';
   }
+
+  if ($vars['view_array']['#name'] == 'cats_for_adoption') {
+    $vars['#attached']['library'][] = 'unl_common/unl_common_cat';
+  }
 }
 
 function unl_common_preprocess_field__paragraph__field_home_featured_animal(&$vars) {

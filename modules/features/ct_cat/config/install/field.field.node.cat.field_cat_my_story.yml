@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cat_my_story
+    - node.type.cat
+  module:
+    - text
+id: node.cat.field_cat_my_story
+field_name: field_cat_my_story
+entity_type: node
+bundle: cat
+label: 'My story'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary
