@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_cat_how_am_i_
+    - node.type.cat
+    - taxonomy.vocabulary.how_am_i
+id: node.cat.field_cat_how_am_i_
+field_name: field_cat_how_am_i_
+entity_type: node
+bundle: cat
+label: 'How am I?'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      how_am_i: how_am_i
+    sort:
+      field: name
+      direction: asc
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

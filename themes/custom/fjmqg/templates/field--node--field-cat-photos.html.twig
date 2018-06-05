@@ -1,0 +1,4 @@
+{% for item in items %}
+<li style="background-image: url({{ file_url(item.content['#item'].entity.uri.value) }})">
+</li>
+{% endfor %}

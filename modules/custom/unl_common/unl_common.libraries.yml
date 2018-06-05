@@ -5,6 +5,14 @@ unl_common:
  dependencies:
     - core/jquery
     - core/jquery.ui
+
+unl_common_cat:
+ version: 1.0
+ js:
+  js/unl_common_cat.js: {}
+ dependencies:
+    - core/jquery
+    - core/jquery.ui
     
 unl_header:
  version: 1.0

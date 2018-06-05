@@ -1,0 +1,163 @@
+{#
+/**
+ * @file
+ * Bartik's theme implementation to display a node.
+ *
+ * Available variables:
+ * - node: The node entity with limited access to object properties and methods.
+ *   Only method names starting with "get", "has", or "is" and a few common
+ *   methods such as "id", "label", and "bundle" are available. For example:
+ *   - node.getCreatedTime() will return the node creation timestamp.
+ *   - node.hasField('field_example') returns TRUE if the node bundle includes
+ *     field_example. (This does not indicate the presence of a value in this
+ *     field.)
+ *   - node.isPublished() will return whether the node is published or not.
+ *   Calling other methods, such as node.delete(), will result in an exception.
+ *   See \Drupal\node\Entity\Node for a full list of public properties and
+ *   methods for the node object.
+ * - label: The title of the node.
+ * - content: All node items. Use {{ content }} to print them all,
+ *   or print a subset such as {{ content.field_example }}. Use
+ *   {{ content|without('field_example') }} to temporarily suppress the printing
+ *   of a given child element.
+ * - author_picture: The node author user entity, rendered using the "compact"
+ *   view mode.
+ * - metadata: Metadata for this node.
+ * - date: Themed creation date field.
+ * - author_name: Themed author name field.
+ * - url: Direct URL of the current node.
+ * - display_submitted: Whether submission information should be displayed.
+ * - attributes: HTML attributes for the containing element.
+ *   The attributes.class element may contain one or more of the following
+ *   classes:
+ *   - node: The current template type (also known as a "theming hook").
+ *   - node--type-[type]: The current node type. For example, if the node is an
+ *     "Article" it would result in "node--type-article". Note that the machine
+ *     name will often be in a short form of the human readable label.
+ *   - node--view-mode-[view_mode]: The View Mode of the node; for example, a
+ *     teaser would result in: "node--view-mode-teaser", and
+ *     full: "node--view-mode-full".
+ *   The following are controlled through the node publishing options.
+ *   - node--promoted: Appears on nodes promoted to the front page.
+ *   - node--sticky: Appears on nodes ordered above other non-sticky nodes in
+ *     teaser listings.
+ *   - node--unpublished: Appears on unpublished nodes visible only to site
+ *     admins.
+ * - title_attributes: Same as attributes, except applied to the main title
+ *   tag that appears in the template.
+ * - content_attributes: Same as attributes, except applied to the main
+ *   content tag that appears in the template.
+ * - author_attributes: Same as attributes, except applied to the author of
+ *   the node tag that appears in the template.
+ * - title_prefix: Additional output populated by modules, intended to be
+ *   displayed in front of the main title tag that appears in the template.
+ * - title_suffix: Additional output populated by modules, intended to be
+ *   displayed after the main title tag that appears in the template.
+ * - view_mode: View mode; for example, "teaser" or "full".
+ * - teaser: Flag for the teaser state. Will be true if view_mode is 'teaser'.
+    * - page: Flag for the full page state. Will be true if view_mode is 'full'.
+ * - readmore: Flag for more state. Will be true if the teaser content of the
+ *   node cannot hold the main body content.
+ * - logged_in: Flag for authenticated user status. Will be true when the
+ *   current user is a logged-in member.
+ * - is_admin: Flag for admin user status. Will be true when the current user
+ *   is an administrator.
+ *
+ * @see template_preprocess_node()
+ */
+#}
+{%
+  set classes = [
+    'node',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+
+    <section class="pet-info">
+      <div class="pet-info-wr">
+        <h2>{{ label }}</h2>
+        <ul class="foto-list">
+          {{ content.field_cat_photos }}
+        </ul>
+        <div class="additional-info">
+          <h2>{{ label }}</h2>
+          <span class="label">{{'Gender'|t}}: {{ content.field_cat_gender }}</span>
+          <span class="label">{{'Age'|t}}: {{age}}</span>
+          <span class="label">{{'Breed'|t}}: {{ content.field_cat_breed }}</span>
+          <span class="label">{{'Size'|t}}: {{ content.field_cat_size }}</span>
+          <span class="label">{{'Hair'|t}}: {{ content.field_cat_hair_type }}</span>
+        </div>
+      </div>
+    </section>
+        
+    <section class="tags-block">
+      <div class="tags-block-wr">
+        <div class="block-item who-i-am">
+          <h3>{{'How am I?'|t}}</h3>
+          <div class="block-inner">
+            {% for key, value in content.field_cat_how_am_i['#items'] %}
+                {% if key >= 0 %}
+                    {% set url = path(content.field_cat_how_am_i[key]['#url'].routeName, content.field_cat_how_am_i[key]['#url'].routeParameters) %}
+                    <a class="label-tag" href="{{ url }}">
+                        {{ content.field_cat_how_am_i[key]['#title'] }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="block-item i-like">
+          <h3>{{'I like'|t}}</h3>
+          <div class="block-inner">
+            {% for key, value in content.field_cat_i_like['#items'] %}
+                {% if key >= 0 %}
+                    {% set url = path(content.field_cat_i_like[key]['#url'].routeName, content.field_cat_i_like[key]['#url'].routeParameters) %}
+                    <a class="label-tag" href="{{ url }}">
+                        {{ content.field_cat_i_like[key]['#title'] }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="block-item my-ideal-home">
+          <h3>{{'My ideal home'|t}}</h3>
+          <div class="block-inner">
+            {% for key, value in content.field_cat_my_ideal_home['#items'] %}
+                {% if key >= 0 %}
+                    {% set url = path(content.field_cat_my_ideal_home[key]['#url'].routeName, content.field_cat_my_ideal_home[key]['#url'].routeParameters) %}
+                    <a class="label-tag" href="{{ url }}">
+                        {{ content.field_cat_my_ideal_home[key]['#title'] }}
+                    </a>
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="block-item my-story">
+          <h3>{{'My story'|t}}</h3>
+          <div class="block-inner">
+            {{ content.field_cat_my_story }}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="help-pets">
+      <div class="help-pets-wr">
+        <h2>title text</h2>
+        <div class="help-pets-inner">
+          <a href="#" class="btn btn-donate">{{'Adopt'|t}} {{ label }}</a>
+          <a href="#" class="btn btn-donate">{{'Sponsor for'|t}} {{ label }}</a>
+        </div>
+      </div>
+    </section>
+    <section class="see-more">
+      <div class="see-more-wr">
+        <h2>See more</h2>
+        <a href="#" class="btn btn-donate">See more</a>
+      </div>
+    </section>
+  
