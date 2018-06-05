@@ -4,8 +4,8 @@ dependencies:
   module:
     - node
     - taxonomy
-id: node.field_cat_how_am_i_
-field_name: field_cat_how_am_i_
+id: node.field_cat_how_am_i
+field_name: field_cat_how_am_i
 entity_type: node
 type: entity_reference
 settings:
