@@ -26,6 +26,32 @@ function fjmqg_preprocess_node__dog__teaser(&$variables) {
   ]);
 }
 
+function fjmqg_preprocess_node__cat(&$variables) {
+  /** @var \Drupal\Core\Datetime\DateFormatterInterface $formatter */
+  $date_formatter = \Drupal::service('date.formatter');
+
+  $node = &$variables['node'];
+  $date = $node->get('field_cat_age');
+
+  $variables['age'] = $date_formatter->formatDiff($date->date->getTimestamp(), REQUEST_TIME, [
+    'granularity' => 2,
+    'return_as_object' => TRUE,
+  ]);
+}
+
+function fjmqg_preprocess_node__cat__teaser(&$variables) {
+  /** @var \Drupal\Core\Datetime\DateFormatterInterface $formatter */
+  $date_formatter = \Drupal::service('date.formatter');
+
+  $node = &$variables['node'];
+  $date = $node->get('field_cat_age');
+
+  $variables['age'] = $date_formatter->formatDiff($date->date->getTimestamp(), REQUEST_TIME, [
+    'granularity' => 2,
+    'return_as_object' => TRUE,
+  ]);
+}
+
 function fjmqg_preprocess_region(&$variables) {
   $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
   $variables['lang'] = $language;

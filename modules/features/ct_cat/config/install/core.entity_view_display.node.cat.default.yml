@@ -6,15 +6,17 @@ dependencies:
     - field.field.node.cat.field_cat_breed
     - field.field.node.cat.field_cat_gender
     - field.field.node.cat.field_cat_hair_type
-    - field.field.node.cat.field_cat_how_am_i_
+    - field.field.node.cat.field_cat_how_am_i
     - field.field.node.cat.field_cat_i_like
     - field.field.node.cat.field_cat_my_ideal_home
     - field.field.node.cat.field_cat_my_story
     - field.field.node.cat.field_cat_photos
     - field.field.node.cat.field_cat_size
+    - image.style.800x350
     - node.type.cat
   module:
     - datetime
+    - field_formatter_range
     - image
     - text
     - user
@@ -56,7 +58,7 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_cat_how_am_i_:
+  field_cat_how_am_i:
     weight: 8
     label: hidden
     settings:
@@ -91,9 +93,13 @@ content:
     weight: 2
     label: hidden
     settings:
-      image_style: ''
+      image_style: 800x350
       image_link: ''
-    third_party_settings: {  }
+    third_party_settings:
+      field_formatter_range:
+        limit: '0'
+        offset: '0'
+        reverse: 0
     type: image
     region: content
   field_cat_size:
