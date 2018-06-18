@@ -52,7 +52,53 @@ class ConfigForm extends ConfigFormBase {
       '#title' => $this->t('Show to visitors map?'),
       '#default_value' => $config->get('unl_contact.show_map'),
     );
+    
+    $form['pets'] = array(
+      '#markup' => $this->t('<h2>Pets section</h2>'),
+      '#allowed_tags' => ['strong'],
+    );
+    $form['pets_help_description'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets help description'),
+      '#default_value' => $config->get('unl_contact.pets_help_description'),
+    );
+    $form['pets_help_adopt_href'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets help Adopt href'),
+      '#default_value' => $config->get('unl_contact.pets_help_adopt_href'),
+    );
+    $form['pets_help_adopt_label'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets help Adopt label'),
+      '#default_value' => $config->get('unl_contact.pets_help_adopt_label'),
+    );
+    $form['pets_help_donate_href'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets help donates href'),
+      '#default_value' => $config->get('unl_contact.pets_help_donate_href'),
+    );
+    $form['pets_help_donate_label'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets help donate label'),
+      '#default_value' => $config->get('unl_contact.pets_help_donate_label'),
+    );
+    $form['pets_see_more_description'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets See more description'),
+      '#default_value' => $config->get('unl_contact.pets_see_more_description'),
+    );
+    $form['pets_see_more_href'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets See more href'),
+      '#default_value' => $config->get('unl_contact.pets_see_more_href'),
+    );
+    $form['pets_see_more_label'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('Pets See more label'),
+      '#default_value' => $config->get('unl_contact.pets_see_more_label'),
+    );
 
+    
     return $form;
   }
 
@@ -65,6 +111,15 @@ class ConfigForm extends ConfigFormBase {
     $config->set('unl_contact.contact_phone', $form_state->getValue('contact_phone'));
     $config->set('unl_contact.contact_email', $form_state->getValue('contact_email'));
     $config->set('unl_contact.show_map', $form_state->getValue('show_map'));
+    $config->set('unl_contact.pets_help_description', $form_state->getValue('pets_help_description'));
+    $config->set('unl_contact.pets_help_adopt_href', $form_state->getValue('pets_help_adopt_href'));
+    $config->set('unl_contact.pets_help_adopt_label', $form_state->getValue('pets_help_adopt_label'));
+    $config->set('unl_contact.pets_help_donate_href', $form_state->getValue('pets_help_donate_href'));
+    $config->set('unl_contact.pets_help_donate_label', $form_state->getValue('pets_help_donate_label'));
+    $config->set('unl_contact.pets_see_more_description', $form_state->getValue('pets_see_more_description'));
+    $config->set('unl_contact.pets_see_more_href', $form_state->getValue('pets_see_more_href'));
+    $config->set('unl_contact.pets_see_more_label', $form_state->getValue('pets_see_more_label'));
+    
     $config->save();
 
     return parent::submitForm($form, $form_state);

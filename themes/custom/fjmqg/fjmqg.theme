@@ -11,6 +11,16 @@ function fjmqg_preprocess_node__dog(&$variables) {
     'granularity' => 2,
     'return_as_object' => TRUE,
   ]);
+  
+  $config = \Drupal::config('unl_contact.settings');
+  $variables['pets_help_description'] = $config->get('unl_contact.pets_help_description');
+  $variables['pets_help_adopt_href'] = $config->get('unl_contact.pets_help_adopt_href');
+  $variables['pets_help_adopt_label'] = $config->get('unl_contact.pets_help_adopt_label');
+  $variables['pets_help_donate_href'] = $config->get('unl_contact.pets_help_donate_href');
+  $variables['pets_help_donate_label'] = $config->get('unl_contact.pets_help_donate_label');
+  $variables['pets_see_more_description'] = $config->get('unl_contact.pets_see_more_description');
+  $variables['pets_see_more_href'] = $config->get('unl_contact.pets_see_more_href');
+  $variables['pets_see_more_label'] = $config->get('unl_contact.pets_see_more_label');
 }
 
 function fjmqg_preprocess_node__dog__teaser(&$variables) {
