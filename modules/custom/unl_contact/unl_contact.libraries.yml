@@ -1,0 +1,8 @@
+unl_contact.google_maps:
+  remote: https://maps.googleapis.com/maps/api/js
+  license:
+    name: MIT
+    url:
+    gpl-compatible: true
+  js:
+    https://maps.googleapis.com/maps/api/js?key=AIzaSyCKZ53ZIDcAnROfVunP0mUO3EJKdprkUzE: { defer: true, async: true, type: external}

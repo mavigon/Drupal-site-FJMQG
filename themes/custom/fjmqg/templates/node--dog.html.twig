@@ -165,8 +165,8 @@
         {% if pets_see_more_description %}
           <h2>{{ pets_see_more_description |t}}</h2>
         {% endif %}
-        {% if pets_see_more_href and pets_see_more_label %}
-            <a href="{{ pets_see_more_href }}" class="btn btn-donate">{{ pets_see_more_label |t}}</a>
+        {% if pets_see_more_label %}
+            <a href="{{ path('view.dogs_for_adoption.page_1') }}" class="btn btn-donate">{{ pets_see_more_label |t}}</a>
         {% endif %}
       </div>
     </section>
