@@ -2,6 +2,7 @@ fjmqg-styling:
   css:
     theme:
       html/build/css/main.css: {}
+      html/build/css/additional.css: {}
   js:
     html/build/js/scripts.js: { minified: true }
   dependencies:

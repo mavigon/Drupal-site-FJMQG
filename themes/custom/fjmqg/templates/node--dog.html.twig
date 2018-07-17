@@ -147,17 +147,27 @@
     
     <section class="help-pets">
       <div class="help-pets-wr">
-        <h2>title text</h2>
+        {% if pets_help_description %}
+        <h2>{{ pets_help_description |t}}</h2>
+        {% endif %}
         <div class="help-pets-inner">
-          <a href="#" class="btn btn-donate">{{'Adopt'|t}} {{ label }}</a>
-          <a href="#" class="btn btn-donate">{{'Sponsor for'|t}} {{ label }}</a>
+          {% if pets_help_adopt_href and pets_help_adopt_label %}
+            <a href="{{ pets_help_adopt_href }}" class="btn btn-donate">{{ pets_help_adopt_label |t}} {{ label }}</a>
+          {% endif %}
+          {% if pets_help_donate_href and pets_help_donate_label %}
+             <a href="{{ pets_help_donate_href }}" class="btn btn-donate">{{ pets_help_donate_label |t}} {{ label }}</a>
+          {% endif %}
         </div>
       </div>
     </section>
     <section class="see-more">
       <div class="see-more-wr">
-        <h2>See more</h2>
-        <a href="#" class="btn btn-donate">See more</a>
+        {% if pets_see_more_description %}
+          <h2>{{ pets_see_more_description |t}}</h2>
+        {% endif %}
+        {% if pets_see_more_label %}
+            <a href="{{ path('view.dogs_for_adoption.page_1') }}" class="btn btn-donate">{{ pets_see_more_label |t}}</a>
+        {% endif %}
       </div>
     </section>
   
