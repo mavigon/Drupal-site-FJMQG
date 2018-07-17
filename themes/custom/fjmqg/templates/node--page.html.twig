@@ -66,10 +66,21 @@
  * @see template_preprocess_node()
  */
 #}
+{%
+  set classes = [
+    'node',
+    'simple-article',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
 
 {{ attach_library('classy/node') }}
 {% set type = node.field_basic_page_type.entity.name.value %}
-<section class="simple-article">
+<section{{ attributes.addClass(classes) }}>
     <div class="simple-article__wr">
        <h3>{{ label }}</h3>
        {{ content }}
