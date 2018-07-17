@@ -5,7 +5,9 @@
       <h2>{{ dog.title.value }}</h2>
       <p>{{dog.get('body').summary}}</p>
       <div class="btn-container">
-        <a class="btn btn-search" href="{{ path('entity.node.canonical', {'node': dog.id}) }}">Search</a>
+        {% if featured_dog_button_label %}
+        <a class="btn btn-search" href="{{ path('entity.node.canonical', {'node': dog.id}) }}">{{ featured_dog_button_label |t}}</a>
+        {% endif %}
       </div>
     </div>
     <div class="bg-img" style="background-image: url({{ file_url(dog.field_dog_photo.entity.fileuri) }})"></div>

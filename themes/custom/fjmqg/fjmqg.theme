@@ -51,7 +51,7 @@ function fjmqg_preprocess_node__cat(&$variables) {
     'return_as_object' => TRUE,
   ]);
   
-      $config = \Drupal::config('unl_contact.settings');
+  $config = \Drupal::config('unl_contact.settings');
   $variables['pets_help_description'] = $config->get('unl_contact.pets_help_description');
   $variables['pets_help_adopt_href'] = $config->get('unl_contact.pets_help_adopt_href');
   $variables['pets_help_adopt_label'] = $config->get('unl_contact.pets_help_adopt_label');

@@ -17,6 +17,10 @@ function unl_common_preprocess_field__paragraph__field_home_featured_animal(&$va
   $lang_code = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
   $node = \Drupal::request()->attributes->get('node');
   if (!empty($node->field_home_page_paragraphs)) {
+      
+    $config = \Drupal::config('unl_contact.settings');
+    $vars['featured_dog_button_label'] = $config->get('unl_contact.featured_dog_button_label');  
+      
     $paragraph = $node->field_home_page_paragraphs->getValue();
     $vars['before_title'] = '';
     foreach ( $paragraph as $element ) {
