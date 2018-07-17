@@ -7,7 +7,7 @@ dependencies:
     - field.field.node.cat.field_cat_breed
     - field.field.node.cat.field_cat_gender
     - field.field.node.cat.field_cat_hair_type
-    - field.field.node.cat.field_cat_how_am_i_
+    - field.field.node.cat.field_cat_how_am_i
     - field.field.node.cat.field_cat_i_like
     - field.field.node.cat.field_cat_my_ideal_home
     - field.field.node.cat.field_cat_my_story
@@ -19,6 +19,7 @@ dependencies:
     - datetime
     - field_formatter_range
     - image
+    - text
     - user
 id: node.cat.teaser
 targetEntityType: node
@@ -42,6 +43,14 @@ content:
     settings:
       link: false
     third_party_settings: {  }
+  field_cat_my_story:
+    type: text_summary_or_trimmed
+    weight: 4
+    region: content
+    label: above
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
   field_cat_photos:
     type: image
     weight: 0
@@ -58,10 +67,9 @@ content:
 hidden:
   field_cat_breed: true
   field_cat_hair_type: true
-  field_cat_how_am_i_: true
+  field_cat_how_am_i: true
   field_cat_i_like: true
   field_cat_my_ideal_home: true
-  field_cat_my_story: true
   field_cat_size: true
   langcode: true
   links: true

@@ -1,5 +1,5 @@
 unl_contact.config:
-  path: '/admin/config/contact_configuration'
+  path: '/admin/config/fjmqg'
   defaults:
     _form: '\Drupal\unl_contact\Form\ConfigForm'
     _title: 'Contact us Configuration'
