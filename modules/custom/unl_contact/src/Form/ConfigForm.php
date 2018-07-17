@@ -97,7 +97,16 @@ class ConfigForm extends ConfigFormBase {
       '#title' => $this->t('Pets See more label'),
       '#default_value' => $config->get('unl_contact.pets_see_more_label'),
     );
-
+    $form['pets_more_info_href'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('More info about adoption href'),
+      '#default_value' => $config->get('unl_contact.pets_more_info_href'),
+    );
+    $form['pets_more_info_label'] = array(
+      '#type' => 'textfield',
+      '#title' => $this->t('More info about adoption label'),
+      '#default_value' => $config->get('unl_contact.pets_more_info_label'),
+    );
     
     return $form;
   }
@@ -119,6 +128,8 @@ class ConfigForm extends ConfigFormBase {
     $config->set('unl_contact.pets_see_more_description', $form_state->getValue('pets_see_more_description'));
     $config->set('unl_contact.pets_see_more_href', $form_state->getValue('pets_see_more_href'));
     $config->set('unl_contact.pets_see_more_label', $form_state->getValue('pets_see_more_label'));
+    $config->set('unl_contact.pets_more_info_href', $form_state->getValue('pets_more_info_href'));
+    $config->set('unl_contact.pets_more_info_label', $form_state->getValue('pets_more_info_label'));
     
     $config->save();
 

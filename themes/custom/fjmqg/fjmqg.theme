@@ -20,6 +20,8 @@ function fjmqg_preprocess_node__dog(&$variables) {
   $variables['pets_help_donate_label'] = $config->get('unl_contact.pets_help_donate_label');
   $variables['pets_see_more_description'] = $config->get('unl_contact.pets_see_more_description');
   $variables['pets_see_more_label'] = $config->get('unl_contact.pets_see_more_label');
+  $variables['pets_more_info_href'] = $config->get('unl_contact.pets_more_info_href');
+  $variables['pets_more_info_label'] = $config->get('unl_contact.pets_more_info_label');
 }
 
 function fjmqg_preprocess_node__dog__teaser(&$variables) {
@@ -57,6 +59,8 @@ function fjmqg_preprocess_node__cat(&$variables) {
   $variables['pets_help_donate_label'] = $config->get('unl_contact.pets_help_donate_label');
   $variables['pets_see_more_description'] = $config->get('unl_contact.pets_see_more_description');
   $variables['pets_see_more_label'] = $config->get('unl_contact.pets_see_more_label');
+  $variables['pets_more_info_href'] = $config->get('unl_contact.pets_more_info_href');
+  $variables['pets_more_info_label'] = $config->get('unl_contact.pets_more_info_label');
 }
 
 function fjmqg_preprocess_node__cat__teaser(&$variables) {
