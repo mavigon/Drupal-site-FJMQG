@@ -1,0 +1,181 @@
+.foto-list .btn-container {
+  bottom: 10%;
+}
+
+.foto-list .btn-container p {
+  color: white;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+.btn-adopt {
+  color: white;
+  background-color: #1623aa;
+}
+
+.btn-adopt:hover {
+  background-color:white;
+  color:#1623aa;
+}
+
+.basic-info-lists h3 {
+  font-weight: 600;
+}
+
+.basic-info-lists a {
+  color: black;
+}
+
+.basic-info-lists a:hover {
+  color:#1623aa;
+}
+
+.add-info a {
+  padding: 12px 25px;
+  border-radius: 20px;
+}
+
+.simple-article h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.btn-search {
+  padding: 12px 25px;
+  border-radius: 20px;
+}
+
+.btn-search:hover {
+  background-color: #303891;
+}
+
+.events-info h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+@media only screen and (min-width: 560px){
+  .node .field--type-image {
+    float: none;
+  }
+}
+
+@media only screen and (min-width: 750px){
+  .events-info h3 {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1623aa;
+  }
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.btn-donate:hover {
+  background-color: #5916aa;
+  color: white;
+  text-decoration: none;
+}
+
+
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+.pager__item a {
+  color: #1623aa;
+}
+
+.view-elem h3 {
+  color: #1623aa;
+}
+
+.main-header-nav-items a {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.block-item .label-tag {
+  font-weight: 600;
+}
+
+.see-more .btn {
+  font-weight: 600;
+}
+
+.btn-donate {
+  font-weight: 700;
+}
+
+.btn-donate:hover {
+  font-weight:600;
+}
+
+.contact-form h2 {
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.contact-detail h2, .contact-location h2 {
+  font-weight: 600;
+}
+
+.basic_link {
+  color: #1623aa;
+  text-align: center;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.help-pets-wr, .see-more-wr {
+  text-align: center;
+}
+
+.help-pets .help-pets-inner {
+  padding-bottom: 2%;
+}
+
+.error-page {
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.error-page-text {
+  text-align: center;
+  font-weight: 600;
+}
+
+.error-page-img {
+  width: 70%;
+  height: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  .error-page {
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 8%;
+    padding-bottom: 10%;
+  }
+
+  .error-page-img {
+    width: 90%;
+    height: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .add-info h3, .add-info h2, .add-info p {
+    text-shadow: 2px 2px 8px #000000;
+  }
+}
