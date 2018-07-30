@@ -4,7 +4,7 @@
  * v2.0 | 20110126
  * License: none (public domain) */
 
-/*@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900");*/
+@import url("https://fonts.googleapis.com/css?family=Muli:400,600,700");
 
 html,
 body,
@@ -2739,6 +2739,15 @@ img.fnone {
   margin-bottom: 20px;
 }
 
+.foto-list__bg-wrapper {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 250px;
+}
+
 .basic-info-wr {
   padding: 20px;
 }
@@ -3537,12 +3546,157 @@ img.fnone {
   background-repeat: no-repeat !important;
 }
 
-.contact-us-form .btn.btn-es {
-  background-image: url("../img/botonenviares.png") !important;
+.foto-list .btn-container {
+  bottom: 10%;
 }
 
-.contact-us-form .btn.btn-nl {
-  background-image: url("../img/botonenviarnl.png") !important;
+.foto-list .btn-container p {
+  color: white;
+  text-shadow: 2px 2px 8px #000000;
+}
+
+.btn-adopt {
+  color: white;
+  background-color: #1623aa;
+}
+
+.btn-adopt:hover {
+  background-color: white;
+  color: #1623aa;
+}
+
+.basic-info-lists h3 {
+  font-weight: 600;
+}
+
+.basic-info-lists a {
+  color: black;
+}
+
+.basic-info-lists a:hover {
+  color: #1623aa;
+}
+
+.add-info a {
+  padding: 12px 25px;
+  border-radius: 20px;
+}
+
+.simple-article h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.btn-search {
+  padding: 12px 25px;
+  border-radius: 20px;
+}
+
+.btn-search:hover {
+  background-color: #303891;
+}
+
+.events-info h3 {
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+.btn-donate:hover {
+  background-color: #5916aa;
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+}
+
+.pager__item a {
+  color: #1623aa;
+}
+
+.view-elem h3 {
+  color: #1623aa;
+}
+
+.main-header-nav-items a {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.block-item .label-tag {
+  font-weight: 600;
+}
+
+.see-more .btn {
+  font-weight: 600;
+}
+
+.btn-donate {
+  font-weight: 700;
+}
+
+.btn-donate:hover {
+  font-weight: 600;
+}
+
+.contact-form h2 {
+  font-weight: 700;
+  margin-bottom: 35px;
+}
+
+.contact-detail h2,
+.contact-location h2 {
+  font-weight: 600;
+}
+
+.basic_link {
+  color: #1623aa;
+  text-align: center;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.help-pets-wr,
+.see-more-wr {
+  text-align: center;
+}
+
+.help-pets .help-pets-inner {
+  padding-bottom: 2%;
+}
+
+.error-page {
+  padding-left: 7%;
+  padding-right: 7%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.error-page-text {
+  text-align: center;
+  font-weight: 600;
+}
+
+.error-page-img {
+  width: 70%;
+  height: 70%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 560px) {
+  .node .field--type-image {
+    float: none;
+  }
 }
 
 @media all and (min-width: 750px) {
@@ -3592,6 +3746,10 @@ img.fnone {
   .special-animal-inner .bg-img,
   .coming-events-inner .bg-img {
     min-height: 460px;
+  }
+
+  .foto-list__bg-wrapper {
+    min-height: 500px;
   }
 
   .pet-info h2 {
@@ -3726,6 +3884,14 @@ img.fnone {
   }
 }
 
+@media only screen and (min-width: 750px) {
+  .events-info h3 {
+    text-transform: uppercase;
+    font-weight: 600;
+    color: #1623aa;
+  }
+}
+
 @media all and (min-width: 1260px) {
   .main-header-logo {
     width: 135px;
@@ -3829,6 +3995,10 @@ img.fnone {
 
   .foto-list .btn-container p {
     color: #000000;
+  }
+
+  .foto-list__bg-wrapper {
+    min-height: 570px;
   }
 
   .basic-info-wr {
@@ -4138,6 +4308,29 @@ img.fnone {
   .contact-wr {
     max-width: 1520px;
     margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .error-page {
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 8%;
+    padding-bottom: 10%;
+  }
+
+  .error-page-img {
+    width: 90%;
+    height: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .add-info h3,
+  .add-info h2,
+  .add-info p {
+    text-shadow: 2px 2px 8px #000000;
   }
 }
 /*# sourceMappingURL=maps/main.css.map */
