@@ -80,10 +80,21 @@
     //google map
     var map;
     function initMap() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: -34.397, lng: 150.644},
-        zoom: 8
-      });
+            
+      if(typeof jQuery('#map').length !== 'undefined'
+        &&  typeof google !== 'undefined'){
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 39.527664, lng: -0.690127},
+          zoom: 8
+        });
+        
+        var marker = new google.maps.Marker({
+          position: {lat: 39.527664, lng: -0.690127},
+          map: map,
+          title: ''
+        });
+      }
+      
     }
 
     initMap();
