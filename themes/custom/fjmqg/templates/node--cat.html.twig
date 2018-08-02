@@ -152,13 +152,13 @@
         {% endif %}
         <div class="help-pets-inner">
           {% if pets_help_adopt_href and pets_help_adopt_label %}
-            <a href="{{ pets_help_adopt_href }}" class="btn btn-donate">{{ pets_help_adopt_label |t}} {{ label }}</a>
+            <a target="_blank" href="{{ pets_help_adopt_href }}?label={{ pets_help_adopt_label |t}}&name={{ label|render|striptags }}" class="btn btn-donate">{{ pets_help_adopt_label |t}} {{ label }}</a>
           {% endif %}
           {% if pets_help_donate_href and pets_help_donate_label %}
-             <a href="{{ pets_help_donate_href }}" class="btn btn-donate">{{ pets_help_donate_label |t}} {{ label }}</a>
+             <a href="{{ pets_help_donate_href }}?label={{ pets_help_donate_label |t}}&name={{ label|render|striptags }}" class="btn btn-donate">{{ pets_help_donate_label |t}} {{ label }}</a>
           {% endif %}
         </div>
-        <a href="{{ pets_more_info_href }}" class="basic_link">{{ pets_more_info_label |t}}</a>
+        <a target="_blank" href="{{ pets_more_info_href }}" class="basic_link">{{ pets_more_info_label |t}}</a>
       </div>
     </section>
     <section class="see-more">
@@ -167,7 +167,7 @@
           <h2>{{ pets_see_more_description |t}}</h2>
         {% endif %}
         {% if pets_see_more_label %}
-            <a href="{{ path('view.cats_for_adoption.page_1') }}" class="btn btn-donate">{{ pets_see_more_label |t}}</a>
+            <a target="_blank"href="{{ path('view.cats_for_adoption.page_1') }}" class="btn btn-donate">{{ pets_see_more_label |t}}</a>
         {% endif %}
       </div>
     </section>

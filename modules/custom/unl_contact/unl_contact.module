@@ -53,15 +53,21 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
       '#weight' => -10,
     ];
     $form['term_info'] = [
-      '#markup' => '<p class="term-info">' . t('By clicking Send you accept our terms and conditions') . '</p>',
+      '#markup' => '<p class="term-info">' . t('By clicking Send you accept our <a target="_blank" href="/node/45">terms and conditions</a>') . '</p>',
       '#weight' => 10,
     ];
     $form['name']['#attributes']['class'][] = 'form-item';
     $form['name']['#title'] = t('Name');
     $form['mail']['#title'] = t('Email address');
-//    kint($form['name']);
-//    die();
+
     $form['field_phone']['#attributes']['class'][] = 'form-item';
+    
+    $default_action = \Drupal::request()->query->get('label');
+    $default_name = \Drupal::request()->query->get('name');
+    
+    $form['subject']['widget'][0]['value']['#default_value']['#default_value'] = $default_action . ' ' . $default_name;
+    $form['subject']['#attributes']['class'][] = 'form-item';
+    
     $form['mail']['#attributes']['class'][] = 'form-item';
     $form['message']['#attributes']['class'][] = 'form-item';
     $form['actions']['submit']['#attributes']['class'][] = 'btn';
