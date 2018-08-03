@@ -5,3 +5,9 @@
 .contact-us-form .form-item:nth-of-type(4) {
   margin-bottom: 50px;
 }
+.contact-us-form .btn.nl {
+  background-image: url("../img/botonenviarnl.png") !important;
+}
+.contact-us-form .btn.es {
+  background-image: url("../img/botonenviares.png") !important;
+}

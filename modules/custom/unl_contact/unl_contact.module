@@ -71,7 +71,11 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
 
     $form['mail']['#attributes']['class'][] = 'form-item';
     $form['message']['#attributes']['class'][] = 'form-item';
+    
+    
     $form['actions']['submit']['#attributes']['class'][] = 'btn';
+    $form['actions']['submit']['#attributes']['class'][] = \Drupal::service('language_manager')->getCurrentLanguage()->getId();
+    
     $form['actions']['submit']['#value'] = '';
 
     $form['#attached']['library'][] = 'unl_contact/unl_contact.google_maps';
