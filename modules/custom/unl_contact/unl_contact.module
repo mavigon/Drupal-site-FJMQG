@@ -31,10 +31,11 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
     if($show_map){
       $prefix .= '<div class="contact-location">
           <h2>Where are we?</h2>
-          <p>adress adress adress adress</p>
+
           <div class="map" id="map"></div>
       </div>';
     }
+    //          <p>adress adress adress adress</p>
 
     $prefix .='</div><div class="contact-form">';
     $form['#prefix'] = $prefix;
@@ -61,16 +62,18 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
     $form['mail']['#title'] = t('Email address');
 
     $form['field_phone']['#attributes']['class'][] = 'form-item';
-    
+
     $default_action = \Drupal::request()->query->get('label');
     $default_name = \Drupal::request()->query->get('name');
-    
+
     $form['subject']['widget'][0]['value']['#default_value']['#default_value'] = $default_action . ' ' . $default_name;
     $form['subject']['#attributes']['class'][] = 'form-item';
-    
+
     $form['mail']['#attributes']['class'][] = 'form-item';
     $form['message']['#attributes']['class'][] = 'form-item';
     $form['actions']['submit']['#attributes']['class'][] = 'btn';
     $form['actions']['submit']['#value'] = '';
+
+    $form['#attached']['library'][] = 'unl_contact/unl_contact.google_maps';
   }
 }

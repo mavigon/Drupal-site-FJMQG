@@ -86,13 +86,15 @@
        {{ content }}
     </div>
     <nav class="aside-list-links">
-      <div class="aside-list-links__toogle">
-        <span></span>
-        <span></span>
-      </div>
         {% if type == 'About us'%}
+            <div class="aside-list-links__toogle">
+              <span></span>
+            </div>
             {{ drupal_menu('about-us') }}
         {% elseif type == 'Help us'%}
+            <div class="aside-list-links__toogle">
+              <span></span>
+            </div>
             {{ drupal_menu('help-us') }}
         {% endif %}
     </nav>

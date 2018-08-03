@@ -80,7 +80,7 @@
     //google map
     var map;
     function initMap() {
-            
+         console.log(jQuery('#map').length);
       if(typeof jQuery('#map').length !== 'undefined'
         &&  typeof google !== 'undefined'){
         map = new google.maps.Map(document.getElementById('map'), {
