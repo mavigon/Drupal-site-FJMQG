@@ -30,7 +30,7 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
                 </div>';
     if($show_map){
       $prefix .= '<div class="contact-location">
-          <h2>Where are we?</h2>
+          <h2>' . t('Where are we') . '?</h2>
 
           <div class="map" id="map"></div>
       </div>';
@@ -59,7 +59,7 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
     ];
     $form['name']['#attributes']['class'][] = 'form-item';
     $form['name']['#title'] = t('Name');
-    $form['mail']['#title'] = t('Email address');
+    $form['mail']['#title'] = t('Email');
 
     $form['field_phone']['#attributes']['class'][] = 'form-item';
 
@@ -70,6 +70,7 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
     $form['subject']['#attributes']['class'][] = 'form-item';
 
     $form['mail']['#attributes']['class'][] = 'form-item';
+
     $form['message']['#attributes']['class'][] = 'form-item';
     
     
@@ -79,5 +80,7 @@ function unl_contact_form_alter(&$form, $form_state, $form_id) {
     $form['actions']['submit']['#value'] = '';
 
     $form['#attached']['library'][] = 'unl_contact/unl_contact.google_maps';
+
+    $form['#cache'] = ['max-age' => 0];
   }
 }
