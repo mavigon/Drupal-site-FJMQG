@@ -4493,7 +4493,6 @@ $.fn.msDropdown = $.fn.msDropDown; //make a copy
         header = $('#main-header'),
         toggleAside = $('.aside-list-links__toogle'),
         aside = $('.list-links');
-
     burger.click(function() {
       menu.toggle('slide');
       header.toggleClass('mobile-menu-toggled');
@@ -4556,6 +4555,7 @@ $.fn.msDropdown = $.fn.msDropDown; //make a copy
     //google map
     var map;
     function initMap() {
+         console.log(jQuery('#map').length);
       if(typeof jQuery('#map').length !== 'undefined'
         &&  typeof google !== 'undefined'){
         map = new google.maps.Map(document.getElementById('map'), {
@@ -4569,6 +4569,7 @@ $.fn.msDropdown = $.fn.msDropDown; //make a copy
           title: ''
         });
       }
+      
     }
 
     initMap();
