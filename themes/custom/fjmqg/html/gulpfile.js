@@ -17,6 +17,7 @@ var gulp        = require('gulp'),
 // Static Server + watching scss/html files
 gulp.task('serve', ['pages', 'sass', 'scripts'], function() {
 	browserSync.init({
+		open: false,
 		server: "./build"
 	});
 	gulp.watch('./sass/**/*.sass', ['sass']);
